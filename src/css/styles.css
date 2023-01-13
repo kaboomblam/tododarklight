@@ -1,0 +1,12 @@
+body {
+    --m-color-bg: teal;
+    --m-color-text: black;
+
+    background-color: var(--m-color-bg);
+    color: var(--m-color-text);
+}
+
+body.dark {
+    --m-color-bg: black;
+    --m-color-text: teal;
+}

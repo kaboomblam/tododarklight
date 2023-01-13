@@ -1,12 +1,19 @@
-import { useState } from "react";
-// import "./css/m3/theme.css";
+import { useEffect, useState } from "react";
+import "./css/styles.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isDark, setIsDark] = useState(false);
 
+  useEffect(() => {
+    isDark
+      ? document.body.classList.add("dark")
+      : document.body.classList.remove("dark");
+  }, [isDark]);
+
+  // document.body.classList.add() = isDark ? ".dark" : "";
   return (
     <div>
-      <button>Toggle Scheme</button>
+      <button onClick={(c) => setIsDark(!isDark)}>Toggle Scheme</button>
       <h1 className="headline-large">Hello "TODO-dark-light" App</h1>
       <h1>Hello "TODO-dark-light" App (without Material Design Class)</h1>
     </div>
