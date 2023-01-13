@@ -1,11 +1,21 @@
-/* @import "./css/m3/tokens.css"; */
+@import "./css/m3/tokens.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
+
   .btn-primary {
-    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-tertiary);
+    font-weight: theme("fontWeight.bold");
+    padding: theme("padding.2") theme("padding.4");
+    border-radius: theme("borderRadius.DEFAULT");
+  }
+
+  .btn-primary:hover {
+    background-color: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-tertiary-container);
   }
 }
