@@ -1,0 +1,12 @@
+// @import "../css/theme.css";
+// @import "../css/m3/temp2";
+// @import "../css/m3/temp";
+@import "../css/m3/tokens";
+@import "../css/m3/colors.module";
+@import "../css/m3/typography.module";
+@import "../css/m3/theme.light"; // (prefers-color-scheme: light);
+@import "../css/m3/theme.dark"; // (prefers-color-scheme: dark);
+
+h1 {
+  @extend .headline-large !optional;
+}
