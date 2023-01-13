@@ -13,7 +13,9 @@ function App() {
   // document.body.classList.add() = isDark ? ".dark" : "";
   return (
     <div>
-      <button onClick={(c) => setIsDark(!isDark)}>Toggle Scheme</button>
+      <button onClick={(c) => setIsDark(!isDark)}>
+        Toggle Scheme {isDark ? "Light" : "Dark"}
+      </button>
       <h1 className="headline-large">Hello "TODO-dark-light" App</h1>
       <h1>Hello "TODO-dark-light" App (without Material Design Class)</h1>
     </div>
