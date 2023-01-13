@@ -10,7 +10,7 @@ The app is called `Fuchsia TODO App`, and is a simple Todo list web application.
 Hopefully, I will practice these technologies:
 
 - [ ] [Tailwind CSS](https://tailwindcss.com/) - utilites
-- [ ] [Material 3 Design](https://m3.material.io/styles/color/overview) - color system
+- [x] [Material 3 Design](https://m3.material.io/styles/color/overview) - color system
 - [ ] [React](https://reactjs.org/) with **TypeScript** - frontend
   - [ ] [React Router](https://reactrouter.com/en/main) - routing
 - [ ] [Vite JS](https://vitejs.dev/) - build tool
