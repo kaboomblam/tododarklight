@@ -7,9 +7,11 @@ type Props = {};
 
 const TodoPage = (props: Props) => {
   console.log("TodoPage: ", STARTING_TODOS);
+
+  const todos = STARTING_TODOS;
   return (
     <>
-      <TodoList />
+      <TodoList todos={todos} />
     </>
   );
 };

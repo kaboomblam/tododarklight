@@ -9,12 +9,12 @@ function generateRandomTodo(): Todo {
     title: faker.random.words(),
     note:
       faker.datatype.number({ min: 0, max: 10 }) >= 3
-        ? faker.random.words(20)
+        ? faker.lorem.paragraph()
         : undefined,
     completed: faker.datatype.number({ min: 0, max: 1 }) === 1,
     deleted: faker.datatype.number({ min: 0, max: 10 }) >= 8,
     created: faker.date.past(),
-    pinned: faker.datatype.number({ min: 0, max: 10 }) === 7,
+    pinned: faker.datatype.number({ min: 0, max: 10 }) >= 7,
   });
 }
 
