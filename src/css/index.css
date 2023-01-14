@@ -7,6 +7,7 @@
 @layer base {
   nav li {
     color: var(--md-sys-color-tertiary-container);
+    transition: all 0.2s ease-in-out;
   }
 
   nav li:hover {
@@ -15,7 +16,7 @@
   }
 
   body.dark nav li:hover {
-    color: theme("colors.red.400");
+    color: theme("colors.red.600");
   }
 }
 
