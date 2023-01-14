@@ -2,22 +2,29 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../providers/ThemeContext";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { allPaths, navBarPaths } from "../utils/route_paths";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const theme = useContext(ThemeContext);
+  const location = useLocation();
 
   return (
     <nav className="p-1 on-surface surface-text">
       <div className="app-content flex items-center justify-between gap-2 bg-red-500/0">
         <p className="headline-small">Fuschia todos</p>
         <ul className="hidden md:flex gap-2.5 title-medium transition-all">
-          {/* <li>TODOS</li>
-          <li>Deleted</li>
-          <li>Completed</li>
-          <li>About App</li> */}
-          {/* for each loop through paths */}
           {Object.entries(navBarPaths).map(([key, value]) => {
-            return <li key={key}>{value.name}</li>;
+            return (
+              <li
+                key={key}
+                className={location.pathname === value.path ? "active" : ""}
+                onClick={(_) =>
+                  console.log(`Current location is...${location.pathname}`)
+                }
+              >
+                {value.name}
+              </li>
+            );
           })}
         </ul>
         <button
