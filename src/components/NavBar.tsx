@@ -6,7 +6,7 @@ const NavBar = () => {
 
   return (
     <nav className="flex items-center justify-center gap-2 p-1 on-surface surface-text">
-      <p className="headline-small">Fuschia</p>
+      <p className="headline-small">Fuschia todos</p>
       <ul className="flex gap-1 title-medium">
         <li>TODOS</li>
         <li>Deleted</li>

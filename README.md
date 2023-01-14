@@ -3,7 +3,7 @@
 A TODO app with dark and light themes, for demo and personal learning purposes.
 
 ## About
-The app is called `Fuchsia TODO App`, and is a simple Todo list web application.
+The app is called `Fuchsia todos`, and is a simple Todo list web application.
 
 # Learning goals
 
