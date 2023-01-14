@@ -7,7 +7,7 @@ const NavBar = () => {
 
   return (
     <nav className="p-1 on-surface surface-text">
-      <div className="mx-auto md:container flex items-center justify-between gap-2 bg-red-500/0">
+      <div className="app-content flex items-center justify-between gap-2 bg-red-500/0">
         <p className="headline-small">Fuschia todos</p>
         <ul className="hidden md:flex gap-2.5 title-medium transition-all">
           <li>TODOS</li>
