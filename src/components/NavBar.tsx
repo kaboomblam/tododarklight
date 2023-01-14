@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../providers/ThemeContext";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const NavBar = () => {
   const theme = useContext(ThemeContext);
@@ -17,7 +18,10 @@ const NavBar = () => {
         className="btn-primary"
         onClick={() => theme.setIsDark(!theme.isDark)}
       >
-        Toggle Theme Mode
+        <p className="flex items-center">
+          Toggle {theme.isDark ? "Light" : "Dark"} Mode{" "}
+          {theme.isDark ? <MdLightMode /> : <MdDarkMode />}
+        </p>
       </button>
     </nav>
   );
