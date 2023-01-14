@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../providers/ThemeContext";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { allPaths, navBarPaths } from "../utils/route_paths";
+import { ALL_PATHS, NAV_BAR_PATHS } from "../utils/route_paths";
 import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
@@ -13,7 +13,7 @@ const NavBar = () => {
       <div className="app-content flex items-center justify-between gap-2 bg-red-500/0">
         <p className="headline-small">Fuschia todos</p>
         <ul className="hidden md:flex gap-2.5 title-medium transition-all">
-          {Object.entries(navBarPaths).map(([key, value]) => {
+          {Object.entries(NAV_BAR_PATHS).map(([key, value]) => {
             return (
               <li
                 key={key}
@@ -31,14 +31,14 @@ const NavBar = () => {
           className="btn-primary"
           onClick={() => theme.setIsDark(!theme.isDark)}
         >
-          <p className="flex items-center gap-1.5 md:px-1.5 title-small">
+          <div className="flex items-center gap-1.5 md:px-1.5">
             <div className="bg-red-500/0 flex items-center mb-0.5">
               {theme.isDark ? <MdLightMode /> : <MdDarkMode />}
             </div>
-            <div className="hidden md:block">
+            <p className="hidden md:block">
               {theme.isDark ? "Light" : "Dark"} Mode
-            </div>
-          </p>
+            </p>
+          </div>
         </button>
       </div>
     </nav>

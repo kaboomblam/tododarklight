@@ -8,14 +8,14 @@ export class Path {
   }
 }
 
-export const navBarPaths = {
+export const NAV_BAR_PATHS = {
   home: new Path("Home", "/"),
   deleted: new Path("Deleted", "/deleted"),
   completed: new Path("Completed", "/completed"),
   about: new Path("About app", "/about"),
 };
 
-export const allPaths = {
-  ...navBarPaths,
-  profile: new Path("not-found", "/not-found"),
+export const ALL_PATHS = {
+  ...NAV_BAR_PATHS,
+  notFound: new Path("not-found", "/not-found"),
 };

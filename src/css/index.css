@@ -28,11 +28,25 @@
   }
 
   .btn-primary {
+    @apply mds-title-small;
     background-color: var(--md-sys-color-tertiary-container);
     color: var(--md-sys-color-tertiary);
     font-weight: theme("fontWeight.bold");
     padding: theme("padding.2") theme("padding.4");
     border-radius: theme("borderRadius.DEFAULT");
+    transition: all 0.2s ease-in-out;
+  }
+
+  .mds-title-small {
+    /* css for Material Design .title-small */
+    font-family: var(--md-sys-typescale-title-small-font-family-name);
+    font-style: var(--md-sys-typescale-title-small-font-family-style);
+    font-weight: var(--md-sys-typescale-title-small-font-weight);
+    font-size: var(--md-sys-typescale-title-small-font-size);
+    letter-spacing: var(--md-sys-typescale-title-small-tracking);
+    line-height: var(--md-sys-typescale-title-small-height);
+    text-transform: var(--md-sys-typescale-title-small-text-transform);
+    text-decoration: var(--md-sys-typescale-title-small-text-decoration);
   }
 
   .btn-primary:hover {
