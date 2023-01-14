@@ -147,6 +147,9 @@ neutral: `#262626`
 neutral-variant: `#52525b`
 > Neutral variant doesn't have a place input in Material Theme Builder
 
+## App Color Palette
+![Color palette](./refs/app-color-palette.PNG)
+
 # Credits
 Material 3 Documentation: 
 https://m3.material.io/styles/color/the-color-system/key-colors-tones#843634bc-6816-480e-8367-7b6d58b2bb96
