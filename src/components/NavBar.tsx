@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../providers/ThemeContext";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { allPaths, navBarPaths } from "../utils/route_paths";
 
 const NavBar = () => {
   const theme = useContext(ThemeContext);
@@ -10,10 +11,14 @@ const NavBar = () => {
       <div className="app-content flex items-center justify-between gap-2 bg-red-500/0">
         <p className="headline-small">Fuschia todos</p>
         <ul className="hidden md:flex gap-2.5 title-medium transition-all">
-          <li>TODOS</li>
+          {/* <li>TODOS</li>
           <li>Deleted</li>
           <li>Completed</li>
-          <li>About App</li>
+          <li>About App</li> */}
+          {/* for each loop through paths */}
+          {Object.entries(navBarPaths).map(([key, value]) => {
+            return <li key={key}>{value.name}</li>;
+          })}
         </ul>
         <button
           className="btn-primary"
