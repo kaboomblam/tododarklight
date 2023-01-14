@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate } from "react-router-dom";
-import "./css/styles.css";
 import ThemeProvider from "./providers/ThemeContext";
 import { Route, Routes } from "react-router";
 import SharedNav from "./components/SharedNav";

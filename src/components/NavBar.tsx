@@ -9,8 +9,8 @@ const NavBar = () => {
   const location = useLocation();
 
   return (
-    <nav className="p-1 on-surface surface-text">
-      <div className="app-content flex items-center justify-between gap-2 bg-red-500/0">
+    <nav className="p-1">
+      <div className="app-content mt-0.5 flex items-center justify-between gap-2 bg-red-500/0">
         <p className="headline-small">Fuschia todos</p>
         <ul className="hidden md:flex gap-2.5 title-medium transition-all">
           {Object.entries(NAV_BAR_PATHS).map(([key, value]) => {
