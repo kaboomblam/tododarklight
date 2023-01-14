@@ -1,11 +1,14 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import TodoList from "../components/TodoList";
 
 const HomePage = () => {
   return (
     <>
       <NavBar />
-      <h1>HomePage items go over here...</h1>
+      <div className="mx-auto md:container">
+        <TodoList />
+      </div>
     </>
   );
 };
