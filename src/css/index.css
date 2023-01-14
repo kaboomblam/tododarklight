@@ -16,15 +16,23 @@
   }
 
   body.dark nav li:hover {
-    color: theme("colors.red.600");
+    /* color: theme("colors.red.600"); */
+    color: var(--md-sys-background-color);
   }
 }
 
 @layer utilities {
 
   nav li.active {
-    color: var(--md-sys-color-tertiary);
-    text-decoration: underline;
+    background-color: var(--md-sys-color-tertiary);
+    border-radius: theme("borderRadius.full");
+    padding: theme("padding.0") theme("padding.3");
+  }
+
+  nav li.active:hover {
+    /* background-color: var(--md-sys-color-tertiary-container); */
+    /* color: var(--md-sys-color-tertiary-container); */
+    color: initial;
   }
 
   .btn-primary {
