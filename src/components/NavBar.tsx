@@ -17,7 +17,7 @@ const NavBar = () => {
         className="btn-primary"
         onClick={() => theme.setIsDark(!theme.isDark)}
       >
-        Toggle Light Mode
+        Toggle Theme Mode
       </button>
     </nav>
   );
