@@ -8,7 +8,7 @@ const SharedNav = (props: Props) => {
   return (
     <>
       <NavBar />
-      <div className="app-content">
+      <div className="app-content pt-5">
         <Outlet />
       </div>
     </>
