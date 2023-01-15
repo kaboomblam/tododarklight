@@ -33,13 +33,13 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
       </div>
       <p className="bg-yellow-100/0 p-1 rounded opacity-70">{todo.note}</p>
       <div className="flex gap-1 items-stretch justify-evenly">
-        <button className="on-surface-variant on-primary-text rounded-sm px-2 flex-1 flex items-center gap-1">
+        <button className="on-surface-variant outline-variant-text rounded-sm px-2 flex-1 flex items-center gap-1">
           <MdModeEditOutline size={18} />
           <p className="pt-0.5 flex-1 body-medium">Edit</p>
         </button>
-        <button className="btn-primary flex-[2] flex items-center gap-1">
+        <button className="flex-[2] flex items-center gap-1 outline-variant on-surface-variant-text border-none rounded-sm p-2">
           <MdOutlineDoneOutline size={18} />{" "}
-          <p className="pt-0.5 flex-1">Complete</p>
+          <p className="pt-0.5 flex-1 body-medium">Complete</p>
         </button>
         {/* <button className="btn-primary flex-1 flex items-center gap-1">
           <AiFillPushpin size={18} /> <p className="pt-0.5 flex-1">Pin</p>
