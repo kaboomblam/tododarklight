@@ -21,7 +21,7 @@ Hopefully, I will practice these technologies:
 Mostly because I find these particular technologies interesting and I hope to learn something new.
 
 # Read More
-- [App Styling](./styles.md)
+- [App Styling](.docs/styles.md)
 
 # Contact
 Hi, please feel free to get in touch with me to ask me anything about the project or give any feedback. [Get in touch]().
