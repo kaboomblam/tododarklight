@@ -9,7 +9,7 @@ const NavBar = () => {
   const location = useLocation();
 
   return (
-    <nav className="p-1 bg-gray-800 text-gray-300">
+    <nav className="p-2 bg-gray-800 text-gray-300">
       <div className="app-content mt-0.5 flex items-center justify-between gap-2 bg-red-500/0">
         <p className="text-2xl">Fuschia todos</p>
         <ul className="hidden md:flex gap-2.5 title-medium transition-all">
@@ -17,7 +17,11 @@ const NavBar = () => {
             return (
               <li
                 key={key}
-                className={location.pathname === value.path ? "active" : ""}
+                className={
+                  location.pathname === value.path
+                    ? "bg-indigo-800 rounded-full px-2 py-1 cursor-pointer transition-colors duration-500"
+                    : "hover:bg-indigo-800 rounded-full px-2 py-1 cursor-pointer transition-colors duration-500"
+                }
                 onClick={(_) =>
                   console.log(`Current location is...${location.pathname}`)
                 }
