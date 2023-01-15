@@ -35,8 +35,8 @@ const NavBar = () => {
           className="btn-primary"
           onClick={() => theme.setIsDark(!theme.isDark)}
         >
-          <div className="flex items-center gap-1.5 md:px-2 bg-gray-300 text-gray-800 px-3 py-2 rounded">
-            <div className="bg-red-500/0 flex items-center mb-0.5">
+          <div className="flex items-center gap-2 md:px-2 bg-gray-300 text-gray-800 px-3 py-2 rounded hover:text-stone-500 transition-colors duration-500">
+            <div className="bg-red-500/0 flex items-center">
               {theme.isDark ? <MdLightMode /> : <MdDarkMode />}
             </div>
             <p className="hidden md:block">
