@@ -19,10 +19,10 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
     >
       {/* Information bar */}
       <div className="flex gap-2 text-sm">
-        <div className="flex bg-stone-400 rounded-full px-2">
-          <p>Created On</p>
+        <div className="flex items-center bg-stone-400/90 dark:bg-stone-400/80 rounded-full px-2">
+          <p className="bg-red-500/0 text-center">Created On</p>
         </div>
-        <div className="flex bg-stone-500 rounded-full px-2">
+        <div className="flex items-center bg-stone-500 dark:bg-stone-600 rounded-full px-2">
           <p>Due Date</p>
         </div>
         <div className="flex-1 text-2xl flex items-end justify-end bg-red-500/0">
