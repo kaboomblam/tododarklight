@@ -25,6 +25,9 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
         <div className="flex bg-stone-500 rounded-full px-2">
           <p>Due Date</p>
         </div>
+        <div className="">
+          <p>P3</p>
+        </div>
         <div className="flex-1 text-2xl flex items-end justify-end bg-red-500/0">
           <BsPinFill />
         </div>
@@ -32,14 +35,16 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
       {/* Title bar */}
       <div className="flex gap-2 text-lg items-center">
         <div className="w-5 h-5 bg-indigo-100 rounded-sm"></div>
-        <div className="text-lg font-[800]">Title</div>
+        <div className="text-lg font-[800] text-indigo-50 bg-gray-800/80 py-1 px-2 rounded">
+          Title
+        </div>
       </div>
       {/* Notes bar */}
       <div className="flex gap-2 text-sm items-start">
-        <div className="flex bg-stone-400 rounded-full px-2 py-1">
+        <div className="flex bg-stone-500/50 rounded-full px-2 py-1">
           <p>Notes</p>
         </div>
-        <div className="flex-1 text-sm font-[400]">
+        <div className="flex-1 text-sm font-[400] bg-stone-500/20 p-1 rounded-sm text-indigo-50">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores ea
             itaque sapiente veritatis rerum ex ut saepe tempora temporibus
@@ -49,12 +54,17 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
         </div>
       </div>
       {/* Actions bar */}
-      <div className="flex gap-2 text-base items-center">
+      <div className="hidden hover:flex gap-2 text-base items-center">
         <div className="flex items-center gap-1 text-stone-500 bg-[#f2e0fe7a] hover:bg-indigo-800 hover:text-indigo-100 cursor-pointer px-2 font-[800] rounded-lg transition-all duration-300">
           <div className="w-2 h-2 rounded-full bg-red-500/50 dark:bg-red-500/70 mr-1"></div>
           <p>Priority 3</p>
           <div className="opacity-70 dark:opacity-80">
             <BiCaretDownCircle />
+          </div>
+        </div>
+        <div className="flex-1 flex justify-end items-center">
+          <div>
+            <MdModeEditOutline />
           </div>
         </div>
       </div>
