@@ -2,7 +2,7 @@ import React from "react";
 import { MdModeEditOutline, MdOutlineDoneOutline } from "react-icons/md";
 import { BsPinFill } from "react-icons/bs";
 
-import { AiFillPushpin, AiOutlineDown } from "react-icons/ai";
+import { AiFillDelete, AiFillPushpin, AiOutlineDown } from "react-icons/ai";
 import { BiCaretDownCircle } from "react-icons/bi";
 import { Todo } from "../utils/todo";
 
@@ -20,13 +20,19 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
       {/* Information bar */}
       <div className="flex gap-2 text-sm">
         <div className="flex items-center bg-stone-400/90 dark:bg-stone-400/80 rounded-full px-2">
-          <p className="bg-red-500/0 text-center">Created On</p>
+          <p className="bg-red-500/0 text-center">Created: Thu, Nov 27</p>
         </div>
-        <div className="flex items-center bg-stone-500 dark:bg-stone-600 rounded-full px-2">
-          <p>Due Date</p>
+        <div className="flex items-center bg-stone-500/80 dark:bg-stone-600/50 rounded-full px-2 text-indigo-50/90 dark:text-indigo-50/70">
+          <p>1 Week</p>
         </div>
-        <div className="flex-1 text-2xl flex items-end justify-end bg-red-500/0">
-          <BsPinFill />
+        <div className="flex-1 text-2xl flex items-end justify-end gap-1.5 bg-red-500/0">
+          <div className="opacity-75 bg-slate-400 rounded px-1 py-0.5 text-stone-500/70">
+            <AiFillDelete />
+          </div>
+          <div className="flex items-center opacity-75 bg-slate-400 text-slate-100 rounded px-1 py-0.5">
+            <AiFillPushpin />
+            {/* <p>PINNED</p> */}
+          </div>
         </div>
       </div>
       {/* Title bar */}
