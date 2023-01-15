@@ -2,7 +2,8 @@ import React from "react";
 import { MdModeEditOutline, MdOutlineDoneOutline } from "react-icons/md";
 import { BsPinFill } from "react-icons/bs";
 
-import { AiFillPushpin } from "react-icons/ai";
+import { AiFillPushpin, AiOutlineDown } from "react-icons/ai";
+import { BiCaretDownCircle } from "react-icons/bi";
 import { Todo } from "../utils/todo";
 
 type Props = {
@@ -49,8 +50,12 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
       </div>
       {/* Actions bar */}
       <div className="flex gap-2 text-base items-center">
-        <div className="flex border-l-2 border-stone-100 bg-[#f2e0fe7a] px-2">
+        <div className="flex items-center gap-1 text-stone-500  bg-[#f2e0fe7a] px-2 font-[800] rounded-lg">
+          <div className="w-2 h-2 rounded-full bg-red-500/50 dark:bg-red-500/70 mr-1"></div>
           <p>Priority 3</p>
+          <div className="opacity-70">
+            <BiCaretDownCircle />
+          </div>
         </div>
       </div>
     </div>
