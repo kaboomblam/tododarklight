@@ -1,5 +1,5 @@
 /* @import "./m3/tokens.css"; */
-@import "./styles.css";
+/* @import "./styles.css"; */
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 @layer base {
   nav {
-    @apply mds-on-surface mds-surface-text;
+    /* @apply mds-on-surface mds-surface-text; */
   }
 
   nav li {
@@ -17,7 +17,7 @@
   }
 
   nav li:hover {
-    background-color: var(--md-sys-color-surface-tint);
+    /* background-color: var(--md-sys-color-surface-tint); */
     cursor: pointer;
   }
 
@@ -25,18 +25,18 @@
 
 @layer utilities {
   nav li.active {
-    background-color: var(--md-sys-color-tertiary);
+    /* background-color: var(--md-sys-color-tertiary); */
     padding: theme("padding.0") theme("padding.3");
   }
 
   nav li.active:hover {
-    @apply mds-surface-text;
+    /* @apply mds-surface-text; */
   }
 
   .btn-primary {
-    @apply mds-title-small;
-    background-color: var(--md-sys-color-tertiary-container);
-    color: var(--md-sys-color-tertiary);
+    /* @apply mds-title-small; */
+    /* background-color: var(--md-sys-color-tertiary-container); */
+    /* color: var(--md-sys-color-tertiary); */
     font-weight: theme("fontWeight.bold");
     padding: theme("padding.2") theme("padding.4");
     border-radius: theme("borderRadius.DEFAULT");
@@ -44,8 +44,8 @@
   }
 
   .btn-primary:hover {
-    background-color: var(--md-sys-color-tertiary);
-    color: var(--md-sys-color-tertiary-container);
+    /* background-color: var(--md-sys-color-tertiary); */
+    /* color: var(--md-sys-color-tertiary-container); */
   }
 
   .app-content {
@@ -56,34 +56,5 @@
     .app-content {
       @apply container;
     }
-  }
-
-  /* Material Design Utility classes */
-  /* --- */
-  .mds-title-small {
-    font-family: var(--md-sys-typescale-title-small-font-family-name);
-    font-style: var(--md-sys-typescale-title-small-font-family-style);
-    font-weight: var(--md-sys-typescale-title-small-font-weight);
-    font-size: var(--md-sys-typescale-title-small-font-size);
-    letter-spacing: var(--md-sys-typescale-title-small-tracking);
-    line-height: var(--md-sys-typescale-title-small-height);
-    text-transform: var(--md-sys-typescale-title-small-text-transform);
-    text-decoration: var(--md-sys-typescale-title-small-text-decoration);
-  }
-
-  .mds-surface-text {
-    color: var(--md-sys-color-surface);
-  }
-
-  .mds-on-surface {
-    background-color: var(--md-sys-color-on-surface);
-  }
-
-  .mds-secondary-container {
-    background-color: var(--md-sys-color-secondary-container);
-  }
-
-  .mds-on-secondary-container-text {
-    color: var(--md-sys-color-on-secondary-container);
   }
 }
