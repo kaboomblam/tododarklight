@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.53030425"
-     inkscape:cx="300.77074"
-     inkscape:cy="308.31358"
+     inkscape:cx="285.68506"
+     inkscape:cy="410.14192"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -48,6 +48,22 @@
      inkscape:snap-bbox-midpoints="true" />
   <defs
      id="defs8053">
+    <linearGradient
+       id="stone-100"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#f5f5f4;stop-opacity:1;"
+         offset="0"
+         id="stop10681" />
+    </linearGradient>
+    <linearGradient
+       id="slate-200"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#e2e8f0;stop-opacity:1;"
+         offset="0"
+         id="stop10542" />
+    </linearGradient>
     <linearGradient
        id="nuetral-900"
        inkscape:swatch="solid">
@@ -260,6 +276,25 @@
        y1="156.85838"
        x2="49.602406"
        y2="156.85838" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#slate-200"
+       id="linearGradient10546"
+       x1="16.037992"
+       y1="141.81676"
+       x2="185.37099"
+       y2="141.81676"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0.4082097)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#stone-100"
+       id="linearGradient10685"
+       x1="39.146065"
+       y1="160.03476"
+       x2="39.939854"
+       y2="160.03476"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:label="light theme"
@@ -268,11 +303,11 @@
      transform="translate(-16.037992,-59.399997)"
      style="display:inline">
     <rect
-       style="fill:#f2e1ff;fill-opacity:1;stroke:#ab40fa;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
+       style="fill:url(#linearGradient10546);fill-opacity:1;stroke:#ab40fa;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
        id="rect843"
        width="169.33299"
        height="164.83351"
-       x="16.037992"
+       x="16.446203"
        y="59.399998"
        inkscape:label="bg"
        inkscape:export-filename="C:\devj0sh\xxWUIPROJSxxx\_demos\tododarklight\refs\todo ui mockup - basic (light mode only).png"
@@ -308,7 +343,7 @@
          ry="3.1185" />
       <path
          id="rect1756-7"
-         style="fill:#e7caff;fill-opacity:0.976471;stroke:#ab40fa;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
+         style="fill:url(#indigo-100);fill-opacity:0.976471;stroke:#ab40fa;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
          sodipodi:type="inkscape:offset"
          inkscape:radius="0"
          inkscape:original="M 162.20508 205.56836 L 162.20508 217.74805 L 164.51562 217.74805 L 164.51562 205.56836 L 162.20508 205.56836 z "
@@ -335,7 +370,7 @@
          y="103.36434"
          ry="1.637987" />
       <rect
-         style="fill:#38bdf8;fill-opacity:1;stroke:#ab40fa;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
+         style="fill:url(#stone-400);fill-opacity:1;stroke:#ab40fa;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
          id="rect1095-6-6"
          width="26.494675"
          height="10.148316"
@@ -409,11 +444,11 @@
            id="path7969" />
       </g>
       <ellipse
-         style="fill:#f3e1ff;fill-opacity:0.976471;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
+         style="fill:url(#stone-100);fill-opacity:0.976471;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.220386;paint-order:stroke fill markers"
          id="path8168"
          cx="96.614769"
          cy="158.92349"
-         rx="3.8666875"
+         rx="3.8670001"
          ry="3.7419558" />
       <rect
          style="fill:url(#stone-500);fill-opacity:1;stroke:#bda2d1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
@@ -429,7 +464,7 @@
          style="stroke-width:1.22834"
          inkscape:label="priority">
         <rect
-           style="fill:#f2e0fe;fill-opacity:1;stroke:#bda2d1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+           style="fill:url(#linearGradient10685);fill-opacity:1;stroke:#bda2d1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
            id="rect9378"
            width="0.79378867"
            height="8.2906818"
