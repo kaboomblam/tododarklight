@@ -14,40 +14,44 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
   return (
     <div
       key={todo.id}
-      className="bg-indigo-300 dark:bg-slate-500 flex flex-col gap-1 p-1.5 rounded-md"
+      className="bg-indigo-300 dark:bg-slate-500 text-indigo-100 flex flex-col gap-2.5 p-2 rounded-md"
     >
-      <div className="flex gap-2.5 items-start">
-        {todo.pinned && (
-          <div className="flex items-center gap-1">
-            <AiFillPushpin /> Pinned
-          </div>
-        )}
-        {todo.completed && (
-          <div className="flex items-center gap-1">
-            <MdOutlineDoneOutline /> Completed
-          </div>
-        )}
-        <div className="flex flex-1 justify-end">
-          <button className="btn-primary">
-            <BsPinFill />
-          </button>
+      {/* Information bar */}
+      <div className="flex gap-2 text-sm">
+        <div className="flex bg-stone-400 rounded-full px-2">
+          <p>Created On</p>
+        </div>
+        <div className="flex bg-stone-500 rounded-full px-2">
+          <p>Due Date</p>
+        </div>
+        <div className="flex-1 text-2xl flex items-end justify-end bg-red-500/0">
+          <BsPinFill />
         </div>
       </div>
-      <p className="body-small opacity-75">{todo.created.toDateString()}</p>
-
-      <div className="flex">
-        <h1 className="">{todo.title.toUpperCase()}</h1>
+      {/* Title bar */}
+      <div className="flex gap-2 text-lg items-center">
+        <div className="w-5 h-5 bg-indigo-100 rounded-sm"></div>
+        <div className="text-lg font-[800]">Title</div>
       </div>
-      {todo.note && <p className="mb-1 opacity-80">{todo.note}</p>}
-      <div className="flex gap-1 items-stretch justify-evenly">
-        <button className="rounded-sm px-2 flex-1 flex items-center gap-1">
-          <MdModeEditOutline size={18} />
-          <p className="pt-0.5 flex-1">Edit</p>
-        </button>
-        <button className="flex-[2] flex items-center gap-1 border-none rounded-sm p-2">
-          <MdOutlineDoneOutline size={18} />{" "}
-          <p className="pt-0.5 flex-1">Complete</p>
-        </button>
+      {/* Notes bar */}
+      <div className="flex gap-2 text-sm items-start">
+        <div className="flex bg-stone-400 rounded-full px-2 py-1">
+          <p>Notes</p>
+        </div>
+        <div className="flex-1 text-sm font-[400]">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores ea
+            itaque sapiente veritatis rerum ex ut saepe tempora temporibus
+            ipsam. Illum inventore incidunt aperiam accusamus beatae dolorum,
+            eaque illo reiciendis.
+          </p>
+        </div>
+      </div>
+      {/* Actions bar */}
+      <div className="flex gap-2 text-base items-center">
+        <div className="flex border-l-2 border-stone-100 bg-[#f2e0fe7a] px-2">
+          <p>Priority 3</p>
+        </div>
       </div>
     </div>
   );
