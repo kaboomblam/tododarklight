@@ -25,8 +25,12 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
         <div className="flex bg-stone-500 rounded-full px-2">
           <p>Due Date</p>
         </div>
-        <div className="">
+        <div className="flex gap-1 items-center border-gray-700/70 text-red-500/50 font-bold border-b-2">
+          <div className="w-2 h-2 rounded-full bg-red-500/50 dark:bg-red-500/70 mr-1" />
           <p>P3</p>
+          <div className="text-gray-700 opacity-90 dark:opacity-80">
+            <BiCaretDownCircle />
+          </div>
         </div>
         <div className="flex-1 text-2xl flex items-end justify-end bg-red-500/0">
           <BsPinFill />
@@ -41,31 +45,16 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
       </div>
       {/* Notes bar */}
       <div className="flex gap-2 text-sm items-start">
-        <div className="flex bg-stone-500/50 rounded-full px-2 py-1">
+        <div className="flex bg-stone-500/80 rounded-full px-2 py-1">
           <p>Notes</p>
         </div>
-        <div className="flex-1 text-sm font-[400] bg-stone-500/20 p-1 rounded-sm text-indigo-50">
+        <div className="flex-1 text-sm font-[400] bg-gray-800/50 p-1 rounded-sm text-indigo-50">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores ea
             itaque sapiente veritatis rerum ex ut saepe tempora temporibus
             ipsam. Illum inventore incidunt aperiam accusamus beatae dolorum,
             eaque illo reiciendis.
           </p>
-        </div>
-      </div>
-      {/* Actions bar */}
-      <div className="hidden hover:flex gap-2 text-base items-center">
-        <div className="flex items-center gap-1 text-stone-500 bg-[#f2e0fe7a] hover:bg-indigo-800 hover:text-indigo-100 cursor-pointer px-2 font-[800] rounded-lg transition-all duration-300">
-          <div className="w-2 h-2 rounded-full bg-red-500/50 dark:bg-red-500/70 mr-1"></div>
-          <p>Priority 3</p>
-          <div className="opacity-70 dark:opacity-80">
-            <BiCaretDownCircle />
-          </div>
-        </div>
-        <div className="flex-1 flex justify-end items-center">
-          <div>
-            <MdModeEditOutline />
-          </div>
         </div>
       </div>
     </div>
