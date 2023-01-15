@@ -50,10 +50,10 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
       </div>
       {/* Actions bar */}
       <div className="flex gap-2 text-base items-center">
-        <div className="flex items-center gap-1 text-stone-500  bg-[#f2e0fe7a] px-2 font-[800] rounded-lg">
+        <div className="flex items-center gap-1 text-stone-500 bg-[#f2e0fe7a] hover:bg-indigo-800 hover:text-indigo-100 cursor-pointer px-2 font-[800] rounded-lg transition-all duration-300">
           <div className="w-2 h-2 rounded-full bg-red-500/50 dark:bg-red-500/70 mr-1"></div>
           <p>Priority 3</p>
-          <div className="opacity-70">
+          <div className="opacity-70 dark:opacity-80">
             <BiCaretDownCircle />
           </div>
         </div>
