@@ -2,7 +2,12 @@ import React from "react";
 import { MdModeEditOutline, MdOutlineDoneOutline } from "react-icons/md";
 import { BsPinFill } from "react-icons/bs";
 
-import { AiFillDelete, AiFillPushpin, AiOutlineDown } from "react-icons/ai";
+import {
+  AiFillDelete,
+  AiFillPushpin,
+  AiOutlineDown,
+  AiOutlinePushpin,
+} from "react-icons/ai";
 import { BiCaretDownCircle } from "react-icons/bi";
 import { Todo } from "../utils/todo";
 
@@ -34,8 +39,7 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
             <AiFillDelete />
           </div>
           <div className="flex items-center opacity-75 bg-slate-400 text-slate-100 rounded px-1 py-0.5">
-            <AiFillPushpin />
-            {/* <p>PINNED</p> */}
+            {todo.pinned ? <AiFillPushpin /> : <AiOutlinePushpin />}
           </div>
         </div>
       </div>
@@ -46,18 +50,13 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
           P3
         </div>
         <div className="text-lg font-[800] text-indigo-50 bg-gray-800/80 py-1 px-2 rounded">
-          Title
+          {todo.title.toString().toUpperCase()}
         </div>
       </div>
       {/* Notes bar */}
       <div className="flex gap-2 text-sm items-start">
         <div className="flex-1 text-sm font-bold bg-gray-800/0 p-2 rounded-sm text-indigo-50">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores ea
-            itaque sapiente veritatis rerum ex ut saepe tempora temporibus
-            ipsam. Illum inventore incidunt aperiam accusamus beatae dolorum,
-            eaque illo reiciendis.
-          </p>
+          <p>{todo.note?.toString()}</p>
         </div>
       </div>
     </div>
