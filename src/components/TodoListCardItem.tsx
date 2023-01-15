@@ -5,6 +5,7 @@ import { BsPinFill } from "react-icons/bs";
 import {
   AiFillDelete,
   AiFillPushpin,
+  AiOutlineClockCircle,
   AiOutlineDown,
   AiOutlinePushpin,
 } from "react-icons/ai";
@@ -30,7 +31,8 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
           </p>
         </div>
         {todo.due && (
-          <div className="flex items-center bg-stone-500/80 dark:bg-stone-600/50 rounded-full px-2 text-indigo-50/90 dark:text-indigo-50/70">
+          <div className="flex items-center gap-1 bg-stone-500/80 dark:bg-stone-600/50 rounded-full px-2 text-indigo-50/90 dark:text-indigo-50/70">
+            <AiOutlineClockCircle />
             <p>{todo.due.toDateString()}</p>
           </div>
         )}
