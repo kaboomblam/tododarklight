@@ -10,7 +10,7 @@ type Props = {
   todoItem: Todo;
 };
 
-const TodoListItem: React.FC<Props> = ({ todoItem }) => {
+const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
   var todo = todoItem.todo;
   return (
     <div
@@ -25,13 +25,6 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
         <div className="flex bg-stone-500 rounded-full px-2">
           <p>Due Date</p>
         </div>
-        <div className="flex gap-1 items-center border-gray-700/70 text-red-500/50 font-bold border-b-2">
-          <div className="w-2 h-2 rounded-full bg-red-500/50 dark:bg-red-500/70 mr-1" />
-          <p>P3</p>
-          <div className="text-gray-700 opacity-90 dark:opacity-80">
-            <BiCaretDownCircle />
-          </div>
-        </div>
         <div className="flex-1 text-2xl flex items-end justify-end bg-red-500/0">
           <BsPinFill />
         </div>
@@ -39,16 +32,16 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
       {/* Title bar */}
       <div className="flex gap-2 text-lg items-center">
         <div className="w-5 h-5 bg-indigo-100 rounded-sm"></div>
+        <div className="text-lg font-[800] text-indigo-50 bg-red-800/80 py-1 px-2 rounded">
+          P3
+        </div>
         <div className="text-lg font-[800] text-indigo-50 bg-gray-800/80 py-1 px-2 rounded">
           Title
         </div>
       </div>
       {/* Notes bar */}
       <div className="flex gap-2 text-sm items-start">
-        <div className="flex bg-stone-500/80 rounded-full px-2 py-1">
-          <p>Notes</p>
-        </div>
-        <div className="flex-1 text-sm font-[400] bg-gray-800/50 p-1 rounded-sm text-indigo-50">
+        <div className="flex-1 text-sm font-bold bg-gray-800/0 p-2 rounded-sm text-indigo-50">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores ea
             itaque sapiente veritatis rerum ex ut saepe tempora temporibus
@@ -61,4 +54,4 @@ const TodoListItem: React.FC<Props> = ({ todoItem }) => {
   );
 };
 
-export default TodoListItem;
+export default TodoListCardItem;
