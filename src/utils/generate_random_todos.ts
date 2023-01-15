@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Todo } from "./todo";
+import { PriorityTag, Todo } from "./todo";
 
 export const STARTING_TODOS: Todo[] = [];
 
@@ -7,6 +7,12 @@ function generateRandomTodo(): Todo {
   return new Todo({
     id: faker.datatype.number(),
     title: faker.random.words(),
+    priority: faker.helpers.arrayElement([
+      new PriorityTag("bg-gray-500/80 dark:bg-gray-700/80", "P0"),
+      new PriorityTag("bg-red-800/80", "P1"),
+      new PriorityTag("bg-yellow-700/80", "P2"),
+      new PriorityTag("bg-cyan-600/80 dark:bg-teal-500/90", "P3"),
+    ]),
     note:
       faker.datatype.number({ min: 0, max: 10 }) >= 3
         ? faker.lorem.paragraph()

@@ -48,8 +48,13 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
       {/* Title bar */}
       <div className="flex gap-2 text-lg items-center">
         <div className="w-5 h-5 bg-indigo-100 rounded-sm"></div>
-        <div className="text-lg font-[800] text-indigo-50 bg-red-800/80 py-1 px-2 rounded">
-          P3
+        <div
+          className={`text-lg font-[800] text-indigo-50 py-1 px-2 rounded ${todo.priority.color}`}
+        >
+          {/* {todo.priority.toString().toUpperCase()} */}
+          {/* <div className={todo.priority.color}> */}
+          {todo.priority.value.toUpperCase()}
+          {/* </div> */}
         </div>
         <div className="text-lg font-[800] text-indigo-50 bg-gray-800/80 py-1 px-2 rounded">
           {todo.title.toString().toUpperCase()}
