@@ -1,6 +1,7 @@
 type TodoElement = {
   id: number;
   title: string;
+  due?: Date;
   note?: string;
   completed: boolean;
   deleted: boolean;
