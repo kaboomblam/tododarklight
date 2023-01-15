@@ -11,7 +11,7 @@ type Props = {
 };
 
 const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
-  var todo = todoItem.todo;
+  var todo = todoItem.todoObj;
   return (
     <div
       key={todo.id}
@@ -19,12 +19,16 @@ const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
     >
       {/* Information bar */}
       <div className="flex gap-2 text-sm">
-        <div className="flex items-center bg-stone-400/90 dark:bg-stone-400/80 rounded-full px-2">
-          <p className="bg-red-500/0 text-center">Created: Thu, Nov 27</p>
+        <div className="flex items-center text-stone-100/90 bg-stone-400/60 dark:bg-stone-400/80 rounded-full px-2">
+          <p className="bg-red-500/0 text-center">
+            {todo.created.toDateString()}
+          </p>
         </div>
-        <div className="flex items-center bg-stone-500/80 dark:bg-stone-600/50 rounded-full px-2 text-indigo-50/90 dark:text-indigo-50/70">
-          <p>1 Week</p>
-        </div>
+        {todo.due && (
+          <div className="flex items-center bg-stone-500/80 dark:bg-stone-600/50 rounded-full px-2 text-indigo-50/90 dark:text-indigo-50/70">
+            <p>{todo.due.toDateString()}</p>
+          </div>
+        )}
         <div className="flex-1 text-2xl flex items-end justify-end gap-1.5 bg-red-500/0">
           <div className="opacity-75 bg-slate-400 rounded px-1 py-0.5 text-stone-500/70">
             <AiFillDelete />

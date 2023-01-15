@@ -14,6 +14,10 @@ function generateRandomTodo(): Todo {
     completed: faker.datatype.number({ min: 0, max: 1 }) === 1,
     deleted: faker.datatype.number({ min: 0, max: 10 }) >= 8,
     created: faker.date.past(),
+    due:
+      faker.datatype.number({ min: 0, max: 10 }) >= 4
+        ? faker.date.future()
+        : undefined,
     pinned: faker.datatype.number({ min: 0, max: 10 }) >= 7,
   });
 }

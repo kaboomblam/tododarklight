@@ -10,9 +10,9 @@ type TodoElement = {
 };
 
 export class Todo {
-  todo: TodoElement;
+  todoObj: TodoElement;
 
   constructor(todo: TodoElement) {
-    this.todo = todo;
+    this.todoObj = todo;
   }
 }
