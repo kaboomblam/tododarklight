@@ -57,10 +57,10 @@
          id="stop10681" />
     </linearGradient>
     <linearGradient
-       id="slate-200"
+       id="slate-100"
        inkscape:swatch="solid">
       <stop
-         style="stop-color:#e2e8f0;stop-opacity:1;"
+         style="stop-color:#f1f5f9;stop-opacity:1;"
          offset="0"
          id="stop10542" />
     </linearGradient>
@@ -278,7 +278,7 @@
        y2="156.85838" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#slate-200"
+       xlink:href="#slate-100"
        id="linearGradient10546"
        x1="16.037992"
        y1="141.81676"
