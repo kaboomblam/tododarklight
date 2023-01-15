@@ -12,7 +12,10 @@ type Props = {
 const TodoListItem: React.FC<Props> = ({ todoItem }) => {
   var todo = todoItem.todo;
   return (
-    <div key={todo.id} className="flex flex-col gap-1 p-1.5 rounded-md">
+    <div
+      key={todo.id}
+      className="bg-indigo-300 dark:bg-slate-500 flex flex-col gap-1 p-1.5 rounded-md"
+    >
       <div className="flex gap-2.5 items-start">
         {todo.pinned && (
           <div className="flex items-center gap-1">
