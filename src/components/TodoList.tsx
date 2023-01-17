@@ -1,6 +1,8 @@
 import React from "react";
 import { Todo } from "../utils/todo";
 import TodoListCardItem from "./TodoListCardItem";
+import { AiFillCalendar, AiFillFlag } from "react-icons/ai";
+import { FaListAlt } from "react-icons/fa";
 
 type Props = {
   todos: Todo[];
@@ -9,9 +11,11 @@ type Props = {
 const TodoList: React.FC<Props> = ({ todos }) => {
   return (
     <div className="mx-auto max-w-lg flex flex-col gap-2">
-      <div className="flex gap-2 border-b border-gray-400 pb-2">
-        <p>Priority:</p>{" "}
-        <select className="bg-gray-300 text-gray-700 rounded">
+      <div className="flex gap-1 bg-blue-300/50 rounded mb-1 p-2">
+        <p className="flex justify-end items-center bg-blue-500/0">
+          <AiFillFlag className="bg-red-500/0" />
+        </p>
+        <select className="font-bold bg-stone-300 text-stone-700 rounded ring-transparent outline-none">
           <option value="All" selected>
             All
           </option>
@@ -20,8 +24,10 @@ const TodoList: React.FC<Props> = ({ todos }) => {
           <option value="P2">P2</option>
           <option value="P3">P3</option>
         </select>
-        <p>Due:</p>
-        <select className="bg-gray-300 text-gray-700 rounded">
+        <p className="ml-0.5 flex justify-end items-center bg-blue-500/0">
+          <AiFillCalendar className="bg-red-500/0" />
+        </p>
+        <select className="font-bold bg-stone-300 text-stone-700 rounded outline-none">
           <option value="All" selected>
             All
           </option>
@@ -32,9 +38,12 @@ const TodoList: React.FC<Props> = ({ todos }) => {
           <option value="month-3">3 months</option>
           <option value="month-6">6 months</option>
           <option value="year-1">1 year</option>
+          <option value="year-1">Overdue</option>
         </select>
-        <p className="flex-1 justify-end items-end text-right">Sort:</p>
-        <select className="bg-gray-300 text-gray-700 rounded">
+        <p className="flex flex-1 justify-end items-center bg-blue-500/0">
+          <FaListAlt className="bg-red-500/0" />
+        </p>
+        <select className="font-bold bg-stone-300 text-stone-700 rounded outline-none">
           <option value="All" selected>
             All
           </option>
