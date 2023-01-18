@@ -3,6 +3,7 @@ import { Todo } from "../utils/todo";
 import TodoListCardItem from "./TodoListCardItem";
 import FilterBar from "./FilterBar";
 import { FilterTodos, SortTodos } from "../utils/filter_todos";
+import ListHeadingTile from "./ListHeadingTile";
 
 type Props = {
   todos: Todo[];
@@ -18,20 +19,35 @@ const TodoList: React.FC<Props> = ({ todos }) => {
   return (
     <div className="mx-auto max-w-lg flex flex-col gap-2">
       <FilterBar />
-      <div className="flex items-center mb-1 text-base font-bold rounded bg-gray-400 dark:bg-gray-300/30 max-w-min">
-        <p className="text-gray-600 dark:text-inherit px-3 py-0.5 rounded-sm bg-red-500/0">
-          Pinned
-        </p>
-        <p className="bg-indigo-500/80 text-gray-800/80 dark:text-inherit p-1 px-2 rounded-sm">
-          {pinnedTodoItems.length}
-        </p>
+      <div className="flex gap-2">
+        <ListHeadingTile
+          label="Pinned"
+          listSize={pinnedTodoItems.length}
+          color="bg-indigo-500/80"
+        />
+        <ListHeadingTile
+          label="Due"
+          listSize={pinnedTodoItems.length}
+          color="bg-red-600/70"
+        />
       </div>
       {pinnedTodoItems.map((listItem) => {
         return (
           <TodoListCardItem key={listItem.todoItem.id} todoItem={listItem} />
         );
       })}
-      <div className="p-0.5 bg-stone-400 my-2 mx-1.5 rounded-sm opacity-70" />
+      <div className="flex gap-2">
+        <ListHeadingTile
+          label="Notes"
+          listSize={unpinnedTodoItems.length}
+          color="bg-indigo-500/80"
+        />
+        <ListHeadingTile
+          label="Due"
+          listSize={unpinnedTodoItems.length}
+          color="bg-red-600/70"
+        />
+      </div>
       {unpinnedTodoItems.map((listItem) => {
         return (
           <TodoListCardItem key={listItem.todoItem.id} todoItem={listItem} />
