@@ -33,15 +33,7 @@ const filterOptions: FilterOption[] = [
   {
     icon: <ImList className="bg-red-500/0" />,
     name: "sort",
-    values: [
-      "All",
-      "A-Z",
-      "Z-A",
-      "Latest",
-      "Oldest",
-      "High Priority",
-      "Low Priority",
-    ],
+    values: ["A-Z", "Z-A", "Latest", "Oldest", "High Priority", "Low Priority"],
   },
 ];
 
