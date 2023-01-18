@@ -43,6 +43,5 @@ export class FilterTodos {
   static filterCompleted = (todo: Todo) => todo.todoItem.completed;
   static filterDeleted = (todo: Todo) => todo.todoItem.deleted;
   static filterPinned = (todo: Todo) => todo.todoItem.pinned;
-  static filterPriority = (todo: Todo) => todo.todoItem.priority;
-  static filterDueDate = (todo: Todo) => todo.todoItem.due;
+  static filterUnpinned = (todo: Todo) => !todo.todoItem.pinned;
 }
