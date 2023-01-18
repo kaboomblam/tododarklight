@@ -49,7 +49,7 @@ const FilterBar = (props: Props) => {
             <p className="flex justify-end items-center bg-blue-500/0 text-indigo-600/70 dark:text-indigo-300/80 opacity-70">
               {filterOption.icon}
             </p>
-            <select className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-violet-800/80 dark:text-inherit rounded-full outline-none">
+            <select className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-indigo-600/90 dark:text-inherit rounded-full outline-none">
               {filterOption.values.map((option) => {
                 return (
                   <option

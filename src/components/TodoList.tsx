@@ -35,7 +35,7 @@ const TodoList: React.FC<Props> = ({ todos }) => {
           color="bg-red-600/70"
         />
         <div className="flex-1 flex justify-end">
-          <button className="bg-violet-300/70 dark:bg-gray-500/30 text-blue-500/80 dark:text-gray-200 text-lg rounded-full px-3.5 py-1">
+          <button className="bg-violet-300/70 dark:bg-gray-500/30 text-indigo-600/90 dark:text-gray-200/80 text-lg rounded-full px-3.5 py-1">
             <AiOutlineColumnHeight />
           </button>
         </div>
