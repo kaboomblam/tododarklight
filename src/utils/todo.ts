@@ -21,9 +21,9 @@ export class PriorityTag {
 }
 
 export class Todo {
-  todoObj: TodoElement;
+  todoItem: TodoElement;
 
   constructor(todo: TodoElement) {
-    this.todoObj = todo;
+    this.todoItem = todo;
   }
 }

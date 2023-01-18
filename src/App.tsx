@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate } from "react-router-dom";
 import ThemeProvider from "./providers/ThemeContext";
 import { Route, Routes } from "react-router";
-import SharedNav from "./components/SharedNav";
+import SharedNavPage from "./pages/SharedNavPage";
 import TodosPage from "./pages/TodosPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ALL_PATHS } from "./utils/route_paths";
@@ -11,7 +11,7 @@ function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<SharedNav />}>
+          <Route path="/" element={<SharedNavPage />}>
             <Route index element={<TodosPage />} />
             <Route path={ALL_PATHS.notFound.path} element={<NotFoundPage />} />
           </Route>

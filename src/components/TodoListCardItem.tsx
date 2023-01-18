@@ -17,7 +17,7 @@ type Props = {
 };
 
 const TodoListCardItem: React.FC<Props> = ({ todoItem }) => {
-  var todo = todoItem.todoObj;
+  var todo = todoItem.todoItem;
   return (
     <div
       key={todo.id}

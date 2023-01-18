@@ -12,7 +12,9 @@ const TodoList: React.FC<Props> = ({ todos }) => {
     <div className="mx-auto max-w-lg flex flex-col gap-2">
       <FilterBar />
       {todos.map((listItem) => {
-        return <TodoListCardItem todoItem={listItem} />;
+        return (
+          <TodoListCardItem key={listItem.todoItem.id} todoItem={listItem} />
+        );
       })}
     </div>
   );

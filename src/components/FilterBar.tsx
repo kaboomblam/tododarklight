@@ -23,7 +23,6 @@ const filterOptions: FilterOption[] = [
       "Today",
       "1 week",
       "2 weeks",
-      "2 weeks",
       "1 month",
       "3 month",
       "6 month",
@@ -51,14 +50,21 @@ const FilterBar = (props: Props) => {
     <div className="flex gap-3 bg-blue-300/50 rounded mb-1 p-2">
       {filterOptions.map((filterOption) => {
         return (
-          <div className="flex gap-0.5 last:bg-red-400/0 last:flex-1 last:justify-end">
+          <div
+            key={filterOption.name}
+            className="flex gap-1 last:bg-red-400/0 last:flex-1 last:justify-end"
+          >
             <p className="flex justify-end items-center bg-blue-500/0 text-indigo-600/70 dark:text-indigo-300/80 opacity-70">
               {filterOption.icon}
             </p>
             <select className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-violet-800/80 dark:text-inherit rounded-full outline-none">
               {filterOption.values.map((option) => {
                 return (
-                  <option value={option} className="bg-stone-200 text-black">
+                  <option
+                    key={filterOption.name + option}
+                    value={option}
+                    className="bg-stone-200 text-black"
+                  >
                     {option}
                   </option>
                 );
