@@ -7,18 +7,21 @@ import ListHeadingTile from "./ListHeadingTile";
 import { BsArrowsCollapse } from "react-icons/bs";
 import { MdOutlineCloseFullscreen } from "react-icons/md";
 import { GrFormViewHide } from "react-icons/gr";
-import { AiOutlineColumnHeight } from "react-icons/ai";
+import CollapseListButton from "./CollapseListButton";
 
 type Props = {
   todos: Todo[];
 };
 
 const TodoList: React.FC<Props> = ({ todos }) => {
-  let sortedTodoItems = todos.sort(SortTodos.sortAlphabeticallyAscending);
-  let pinnedTodoItems = sortedTodoItems.filter(FilterTodos.filterPinned);
-  let unpinnedTodoItems = sortedTodoItems.filter(FilterTodos.filterUnpinned);
+  let pinnedTodoItems = todos
+    .filter(FilterTodos.filterPinned)
+    .sort(SortTodos.sortAlphabeticallyAscending);
+  let unpinnedTodoItems = todos
+    .filter(FilterTodos.filterUnpinned)
+    .sort(SortTodos.sortAlphabeticallyAscending);
 
-  console.log(sortedTodoItems);
+  console.log("pinnedTodoItems: ", pinnedTodoItems);
 
   return (
     <div className="mx-auto max-w-lg flex flex-col gap-2">
@@ -35,9 +38,7 @@ const TodoList: React.FC<Props> = ({ todos }) => {
           color="bg-red-600/70"
         />
         <div className="flex-1 flex justify-end">
-          <button className="bg-violet-300/70 dark:bg-gray-500/30 text-indigo-600/90 dark:text-gray-200/80 text-lg rounded-full px-3.5 py-1">
-            <AiOutlineColumnHeight />
-          </button>
+          <CollapseListButton />
         </div>
       </div>
       {pinnedTodoItems.map((listItem) => {
@@ -56,6 +57,9 @@ const TodoList: React.FC<Props> = ({ todos }) => {
           listSize={unpinnedTodoItems.length}
           color="bg-red-600/70"
         />
+        <div className="flex-1 flex justify-end">
+          <CollapseListButton />
+        </div>
       </div>
       {unpinnedTodoItems.map((listItem) => {
         return (

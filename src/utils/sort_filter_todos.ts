@@ -2,20 +2,32 @@ import { Todo } from "./todo";
 
 export class SortTodos {
   static sortAlphabeticallyAscending = function (a: Todo, b: Todo) {
-    if (a.todoItem.title < b.todoItem.title) {
+    if (
+      a.todoItem.title.toLocaleLowerCase() <
+      b.todoItem.title.toLocaleLowerCase()
+    ) {
       return -1;
     }
-    if (a.todoItem.title > b.todoItem.title) {
+    if (
+      a.todoItem.title.toLocaleLowerCase() >
+      b.todoItem.title.toLocaleLowerCase()
+    ) {
       return 1;
     }
     return 0;
   };
 
   static sortAlphabeticallyDescending = function (a: Todo, b: Todo) {
-    if (a.todoItem.title < b.todoItem.title) {
+    if (
+      a.todoItem.title.toLocaleLowerCase() <
+      b.todoItem.title.toLocaleLowerCase()
+    ) {
       return 1;
     }
-    if (a.todoItem.title > b.todoItem.title) {
+    if (
+      a.todoItem.title.toLocaleLowerCase() >
+      b.todoItem.title.toLocaleLowerCase()
+    ) {
       return -1;
     }
     return 0;
