@@ -22,7 +22,7 @@ const TodoList: React.FC<Props> = ({ todos }) => {
         <p className="text-gray-600 dark:text-inherit px-3 py-0.5 rounded-sm bg-red-500/0">
           Pinned
         </p>
-        <p className="bg-indigo-500/80 p-1 px-2 rounded-sm">
+        <p className="bg-indigo-500/80 text-gray-800/80 dark:text-inherit p-1 px-2 rounded-sm">
           {pinnedTodoItems.length}
         </p>
       </div>
