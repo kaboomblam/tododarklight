@@ -27,7 +27,6 @@ export class SortTodos {
   static sortCreatedDateDescending = (a: Todo, b: Todo) =>
     b.todoItem.created.getTime() - a.todoItem.created.getTime();
 
-  // TODO: Fix this sort function by filtering out due dates into a new array, sorting that array, then mapping the sorted array back to the original array
   static sortDueDateAscending = (a: Todo, b: Todo) =>
     a.todoItem.due && b.todoItem.due
       ? a.todoItem.due.getTime() - b.todoItem.due.getTime()
