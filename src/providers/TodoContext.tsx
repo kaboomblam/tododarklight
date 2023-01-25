@@ -11,7 +11,7 @@ type FilterOption = {
   name: string;
   icon: JSX.Element;
   values: string[];
-  currentValue: string;
+  currentValue: number;
 };
 
 type ContextProps = {
@@ -25,42 +25,48 @@ const TodoContext = createContext<ContextProps>({
 });
 
 const TodoProvider: React.FC<Props> = (props: Props) => {
+  // Todo filter categories
+
+  const priorityFilters = ["All", "P0", "P1", "P2", "P3", "P4", "P5"];
+  const dueDateFilters = [
+    "All",
+    "Today",
+    "1 week",
+    "2 weeks",
+    "1 month",
+    "3 month",
+    "6 month",
+    "1 year",
+    "Overdue",
+  ];
+  const sortFilters = [
+    "A-Z",
+    "Z-A",
+    "Latest",
+    "Oldest",
+    "High Priority",
+    "Low Priority",
+  ];
+
   // TODO: Fix current value logic to reflect in select
-  const filterOptions: FilterOption[] = [
+  const filters: FilterOption[] = [
     {
       name: "priority",
       icon: <ImFlag className="bg-red-500/0" />,
-      values: ["All", "P0", "P1", "P2", "P3", "P4", "P5"],
-      currentValue: "All",
+      values: priorityFilters,
+      currentValue: 0,
     },
     {
       name: "dueDate",
       icon: <ImCalendar className="bg-red-500/0" />,
-      values: [
-        "All",
-        "Today",
-        "1 week",
-        "2 weeks",
-        "1 month",
-        "3 month",
-        "6 month",
-        "1 year",
-        "Overdue",
-      ],
-      currentValue: "All",
+      values: dueDateFilters,
+      currentValue: 2,
     },
     {
       name: "sort",
       icon: <ImList className="bg-red-500/0" />,
-      values: [
-        "A-Z",
-        "Z-A",
-        "Latest",
-        "Oldest",
-        "High Priority",
-        "Low Priority",
-      ],
-      currentValue: "A-Z",
+      values: sortFilters,
+      currentValue: sortFilters.length - 1,
     },
   ];
 
@@ -69,20 +75,28 @@ const TodoProvider: React.FC<Props> = (props: Props) => {
   );
 
   const [content, setContent] = useState<ContextProps>({
-    filters: filterOptions,
+    filters,
     lists: [
       {
         id: 1234,
         name: "Pinned",
-        comprisedOf: [],
+        comprisedOf: placeholderRandomList
+          .filter(FilterTodos.filterPinned)
+          .sort(SortTodos.sortAlphabeticallyAscending),
       },
       {
         id: 1235,
         name: "Todos",
-        comprisedOf: [],
+        comprisedOf: placeholderRandomList
+          .filter(FilterTodos.filterUnpinned)
+          .sort(SortTodos.sortAlphabeticallyAscending),
       },
     ],
   });
+
+  useEffect(() => {
+    console.log("Something changed in TodoContext content...");
+  }, [content]);
 
   return (
     <TodoContext.Provider value={content}>

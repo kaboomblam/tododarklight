@@ -29,7 +29,7 @@ const TodoList: React.FC<Props> = ({ todos }) => {
           name={todos.name}
         />
       ))}
-      <p className="mt-1 text-gray-400 transition-none duration-75 dark:text-gray-600">
+      <p className="mt-1 mb-2.5 text-gray-400 transition-none duration-75 dark:text-gray-600">
         No more lists
       </p>
     </div>
