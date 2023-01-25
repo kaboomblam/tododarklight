@@ -28,7 +28,7 @@ const TodoList: React.FC<Props> = ({ todos }) => {
     <div className="mx-auto max-w-lg flex flex-col gap-2">
       <FilterBar />
       <CollapsablePartialList todos={pinnedTodoItems} name="Pinned" />
-      <CollapsablePartialList todos={unpinnedTodoItems} name="Unppinned" />
+      <CollapsablePartialList todos={unpinnedTodoItems} name="UnPinned" />
       <p>No more in lists</p>
     </div>
   );

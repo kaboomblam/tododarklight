@@ -26,7 +26,10 @@ const CollapsablePartialList = (props: Props) => {
           color="bg-red-600/70"
         />
         <div className="flex-1 flex justify-end">
-          <CollapseListButton onClick={() => setIsCollapsed(!isCollapsed)} />
+          <CollapseListButton
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            isCollapsed={isCollapsed}
+          />
         </div>
       </div>
       {!isCollapsed && (
