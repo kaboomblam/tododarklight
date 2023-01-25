@@ -55,9 +55,7 @@ const FilterProvider: React.FC<Props> = (props: Props) => {
       ],
     },
   ];
-  // let pinnedTodoItems = todos
-  // .filter(FilterTodos.filterPinned)
-  // .sort(SortTodos.sortAlphabeticallyAscending);
+
   return (
     <FilterContext.Provider
       value={{

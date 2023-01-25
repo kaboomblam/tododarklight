@@ -6,8 +6,6 @@ import { STARTING_TODOS } from "../utils/generate_random_todos";
 type Props = {};
 
 const TodoPage = (props: Props) => {
-  console.log("TodoPage: ", STARTING_TODOS);
-
   const todos = STARTING_TODOS;
   return (
     <>

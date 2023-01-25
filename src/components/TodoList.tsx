@@ -16,8 +16,6 @@ const TodoList: React.FC<Props> = ({ todos }) => {
     .filter(FilterTodos.filterUnpinned)
     .sort(SortTodos.sortAlphabeticallyAscending);
 
-  console.log("pinnedTodoItems: ", pinnedTodoItems);
-
   return (
     <div className="mx-auto max-w-lg flex flex-col gap-2">
       <FilterBar />
