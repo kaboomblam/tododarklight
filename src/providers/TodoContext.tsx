@@ -64,7 +64,12 @@ const TodoProvider: React.FC<Props> = (props: Props) => {
       {
         id: 1234,
         name: "My Todo List",
-        comprisedOf: [generateRandomTodo()],
+        comprisedOf: Array.from({ length: 2 }).map(() => generateRandomTodo()),
+      },
+      {
+        id: 1235,
+        name: "My Todo List 2",
+        comprisedOf: Array.from({ length: 10 }).map(() => generateRandomTodo()),
       },
     ],
   });

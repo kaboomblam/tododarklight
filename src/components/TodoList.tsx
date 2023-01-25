@@ -26,7 +26,7 @@ const TodoList: React.FC<Props> = ({ todos }) => {
         <CollapsablePartialList
           key={todo.id}
           todos={todo.comprisedOf}
-          name="Test-01"
+          name={todo.name}
         />
       ))}
       {/* <CollapsablePartialList todos={pinnedTodoItems} name="Pinned" /> */}
