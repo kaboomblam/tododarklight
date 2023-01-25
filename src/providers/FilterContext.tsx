@@ -1,10 +1,12 @@
 import React, { createContext } from "react";
 import { ImCalendar, ImFlag, ImList } from "react-icons/im";
+import { TodoList } from "../utils/todo_list";
 
 type Props = { children: JSX.Element };
 
 type ContextProps = {
-  filters: Array<FilterOption>;
+  filters: FilterOption[];
+  lists: TodoList[];
 };
 
 type FilterOption = {
@@ -15,6 +17,7 @@ type FilterOption = {
 
 const FilterContext = createContext<ContextProps>({
   filters: [],
+  lists: [],
 });
 
 const FilterProvider: React.FC<Props> = (props: Props) => {
@@ -52,10 +55,14 @@ const FilterProvider: React.FC<Props> = (props: Props) => {
       ],
     },
   ];
+  // let pinnedTodoItems = todos
+  // .filter(FilterTodos.filterPinned)
+  // .sort(SortTodos.sortAlphabeticallyAscending);
   return (
     <FilterContext.Provider
       value={{
         filters: filterOptions,
+        lists: [],
       }}
     >
       {props.children}
