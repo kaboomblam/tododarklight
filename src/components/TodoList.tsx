@@ -22,16 +22,16 @@ const TodoList: React.FC<Props> = ({ todos }) => {
   return (
     <div className="mx-auto max-w-lg flex flex-col gap-2">
       <FilterBar />
-      {todoContent.lists.map((todo) => (
+      {todoContent.lists.map((todos) => (
         <CollapsablePartialList
-          key={todo.id}
-          todos={todo.comprisedOf}
-          name={todo.name}
+          key={todos.id}
+          todos={todos.comprisedOf}
+          name={todos.name}
         />
       ))}
-      {/* <CollapsablePartialList todos={pinnedTodoItems} name="Pinned" /> */}
-      {/* <CollapsablePartialList todos={unpinnedTodoItems} name="Notes" /> */}
-      <p>No more in lists</p>
+      <p className="mt-1 text-gray-400 transition-none duration-75 dark:text-gray-600">
+        No more lists
+      </p>
     </div>
   );
 };

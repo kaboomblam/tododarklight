@@ -12,6 +12,18 @@ type Props = {
 const CollapsablePartialList = (props: Props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
+  function cards(): JSX.Element {
+    return (
+      <div className="flex flex-col gap-2">
+        {props.todos.map((listItem) => {
+          return (
+            <TodoListCardItem key={listItem.todoItem.id} todoItem={listItem} />
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2 mb-1 mt-3.5 items-center">
@@ -32,18 +44,12 @@ const CollapsablePartialList = (props: Props) => {
           />
         </div>
       </div>
-      {!isCollapsed && (
-        <div className="flex flex-col gap-2">
-          {props.todos.map((listItem) => {
-            return (
-              <TodoListCardItem
-                key={listItem.todoItem.id}
-                todoItem={listItem}
-              />
-            );
-          })}
-        </div>
-      )}
+      {!isCollapsed &&
+        (props.todos.length > 0 ? (
+          cards()
+        ) : (
+          <p className="text-gray-500">No items</p>
+        ))}
     </div>
   );
 };

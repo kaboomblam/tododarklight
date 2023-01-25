@@ -3,13 +3,15 @@ import { ImCalendar, ImFlag, ImList } from "react-icons/im";
 import { TodoList } from "../utils/todo_list";
 import { Todo } from "../utils/todo";
 import { generateRandomTodo } from "../utils/generate_random_todos";
+import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
 
 type Props = { children: JSX.Element };
 
 type FilterOption = {
-  icon: JSX.Element;
   name: string;
+  icon: JSX.Element;
   values: string[];
+  currentValue: string;
 };
 
 type ContextProps = {
@@ -23,15 +25,17 @@ const TodoContext = createContext<ContextProps>({
 });
 
 const TodoProvider: React.FC<Props> = (props: Props) => {
+  // TODO: Fix current value logic to reflect in select
   const filterOptions: FilterOption[] = [
     {
-      icon: <ImFlag className="bg-red-500/0" />,
       name: "priority",
+      icon: <ImFlag className="bg-red-500/0" />,
       values: ["All", "P0", "P1", "P2", "P3", "P4", "P5"],
+      currentValue: "All",
     },
     {
-      icon: <ImCalendar className="bg-red-500/0" />,
       name: "dueDate",
+      icon: <ImCalendar className="bg-red-500/0" />,
       values: [
         "All",
         "Today",
@@ -43,10 +47,11 @@ const TodoProvider: React.FC<Props> = (props: Props) => {
         "1 year",
         "Overdue",
       ],
+      currentValue: "All",
     },
     {
-      icon: <ImList className="bg-red-500/0" />,
       name: "sort",
+      icon: <ImList className="bg-red-500/0" />,
       values: [
         "A-Z",
         "Z-A",
@@ -55,34 +60,29 @@ const TodoProvider: React.FC<Props> = (props: Props) => {
         "High Priority",
         "Low Priority",
       ],
+      currentValue: "A-Z",
     },
   ];
+
+  const placeholderRandomList = Array.from({ length: 20 }).map(() =>
+    generateRandomTodo(),
+  );
 
   const [content, setContent] = useState<ContextProps>({
     filters: filterOptions,
     lists: [
       {
         id: 1234,
-        name: "My Todo List",
-        comprisedOf: Array.from({ length: 2 }).map(() => generateRandomTodo()),
+        name: "Pinned",
+        comprisedOf: [],
       },
       {
         id: 1235,
-        name: "My Todo List 2",
-        comprisedOf: Array.from({ length: 10 }).map(() => generateRandomTodo()),
+        name: "Todos",
+        comprisedOf: [],
       },
     ],
   });
-
-  // useEffect(() => {
-  //   setContent({...content, lists: [
-
-  //   ]})
-  // }, [content]);
-
-  // let pinnedTodoItems = todos
-  // .filter(FilterTodos.filterPinned)
-  // .sort(SortTodos.sortAlphabeticallyAscending);
 
   return (
     <TodoContext.Provider value={content}>
