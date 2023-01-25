@@ -5,12 +5,12 @@ import SharedNavPage from "./pages/SharedNavPage";
 import TodosPage from "./pages/TodosPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ALL_PATHS } from "./utils/route_paths";
-import { FilterProvider } from "./providers/FilterContext";
+import { TodoProvider } from "./providers/TodoContext";
 
 function App() {
   return (
     <ThemeProvider>
-      <FilterProvider>
+      <TodoProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<SharedNavPage />}>
@@ -34,7 +34,7 @@ function App() {
             />
           </Routes>
         </BrowserRouter>
-      </FilterProvider>
+      </TodoProvider>
     </ThemeProvider>
   );
 }

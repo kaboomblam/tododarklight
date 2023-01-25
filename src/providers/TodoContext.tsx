@@ -1,13 +1,10 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { ImCalendar, ImFlag, ImList } from "react-icons/im";
 import { TodoList } from "../utils/todo_list";
+import { Todo } from "../utils/todo";
+import { generateRandomTodo } from "../utils/generate_random_todos";
 
 type Props = { children: JSX.Element };
-
-type ContextProps = {
-  filters: FilterOption[];
-  lists: TodoList[];
-};
 
 type FilterOption = {
   icon: JSX.Element;
@@ -15,12 +12,17 @@ type FilterOption = {
   values: string[];
 };
 
-const FilterContext = createContext<ContextProps>({
+type ContextProps = {
+  filters: FilterOption[];
+  lists: TodoList[];
+};
+
+const TodoContext = createContext<ContextProps>({
   filters: [],
   lists: [],
 });
 
-const FilterProvider: React.FC<Props> = (props: Props) => {
+const TodoProvider: React.FC<Props> = (props: Props) => {
   const filterOptions: FilterOption[] = [
     {
       icon: <ImFlag className="bg-red-500/0" />,
@@ -56,16 +58,32 @@ const FilterProvider: React.FC<Props> = (props: Props) => {
     },
   ];
 
+  const [content, setContent] = useState<ContextProps>({
+    filters: filterOptions,
+    lists: [
+      {
+        id: 1234,
+        name: "My Todo List",
+        comprisedOf: [generateRandomTodo()],
+      },
+    ],
+  });
+
+  // useEffect(() => {
+  //   setContent({...content, lists: [
+
+  //   ]})
+  // }, [content]);
+
+  // let pinnedTodoItems = todos
+  // .filter(FilterTodos.filterPinned)
+  // .sort(SortTodos.sortAlphabeticallyAscending);
+
   return (
-    <FilterContext.Provider
-      value={{
-        filters: filterOptions,
-        lists: [],
-      }}
-    >
+    <TodoContext.Provider value={content}>
       {props.children}
-    </FilterContext.Provider>
+    </TodoContext.Provider>
   );
 };
 
-export { FilterProvider, FilterContext };
+export { TodoProvider, TodoContext };

@@ -3,7 +3,7 @@ import { PriorityTag, Todo } from "./todo";
 
 export const STARTING_TODOS: Todo[] = [];
 
-function generateRandomTodo(): Todo {
+export function generateRandomTodo(): Todo {
   return new Todo({
     id: faker.datatype.number(),
     title: faker.random.words(),

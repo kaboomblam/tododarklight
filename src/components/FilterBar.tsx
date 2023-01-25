@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { FilterContext } from "../providers/FilterContext";
+import { TodoContext } from "../providers/TodoContext";
 
 type Props = {};
 
 const FilterBar = (props: Props) => {
-  const filterOptions = useContext(FilterContext);
+  const filterOptions = useContext(TodoContext);
   return (
     <div className="flex gap-3 bg-blue-300/50 rounded mb-1 p-2">
       {filterOptions.filters.map((filterOption) => {
