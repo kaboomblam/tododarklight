@@ -1,46 +1,13 @@
-import React from "react";
-import { ImCalendar, ImFlag, ImList } from "react-icons/im";
+import React, { useContext } from "react";
+import { FilterContext } from "../providers/FilterContext";
 
 type Props = {};
 
-type FilterOption = {
-  icon: JSX.Element;
-  name: string;
-  values: string[];
-};
-
-const filterOptions: FilterOption[] = [
-  {
-    icon: <ImFlag className="bg-red-500/0" />,
-    name: "priority",
-    values: ["All", "P0", "P1", "P2", "P3"],
-  },
-  {
-    icon: <ImCalendar className="bg-red-500/0" />,
-    name: "dueDate",
-    values: [
-      "All",
-      "Today",
-      "1 week",
-      "2 weeks",
-      "1 month",
-      "3 month",
-      "6 month",
-      "1 year",
-      "Overdue",
-    ],
-  },
-  {
-    icon: <ImList className="bg-red-500/0" />,
-    name: "sort",
-    values: ["A-Z", "Z-A", "Latest", "Oldest", "High Priority", "Low Priority"],
-  },
-];
-
 const FilterBar = (props: Props) => {
+  const filterOptions = useContext(FilterContext);
   return (
     <div className="flex gap-3 bg-blue-300/50 rounded mb-1 p-2">
-      {filterOptions.map((filterOption) => {
+      {filterOptions.filters.map((filterOption) => {
         return (
           <div
             key={filterOption.name}
@@ -49,7 +16,10 @@ const FilterBar = (props: Props) => {
             <p className="flex justify-end items-center bg-blue-500/0 text-indigo-600/70 dark:text-indigo-300/80 opacity-70">
               {filterOption.icon}
             </p>
-            <select className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-indigo-600/90 dark:text-inherit rounded-full outline-none">
+            <select
+              className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-indigo-600/90 dark:text-inherit rounded-full outline-none"
+              onChange={(e) => console.log("We clicked", e.target.value)}
+            >
               {filterOption.values.map((option) => {
                 return (
                   <option

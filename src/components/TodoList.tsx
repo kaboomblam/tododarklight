@@ -1,13 +1,7 @@
 import React from "react";
 import { Todo } from "../utils/todo";
-import TodoListCardItem from "./TodoListCardItem";
 import FilterBar from "./FilterBar";
 import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
-import ListHeadingTile from "./ListHeadingTile";
-import { BsArrowsCollapse } from "react-icons/bs";
-import { MdOutlineCloseFullscreen } from "react-icons/md";
-import { GrFormViewHide } from "react-icons/gr";
-import CollapseListButton from "./CollapseListButton";
 import CollapsablePartialList from "./CollapsablePartialList";
 
 type Props = {

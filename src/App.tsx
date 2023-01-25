@@ -5,27 +5,36 @@ import SharedNavPage from "./pages/SharedNavPage";
 import TodosPage from "./pages/TodosPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ALL_PATHS } from "./utils/route_paths";
+import { FilterProvider } from "./providers/FilterContext";
 
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SharedNavPage />}>
-            <Route index element={<TodosPage />} />
-            <Route path={ALL_PATHS.notFound.path} element={<NotFoundPage />} />
-          </Route>
-          <Route
-            path="/test"
-            element={
-              <div>
-                <p>Test</p>
-              </div>
-            }
-          />
-          <Route path="*" element={<Navigate to={ALL_PATHS.notFound.path} />} />
-        </Routes>
-      </BrowserRouter>
+      <FilterProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<SharedNavPage />}>
+              <Route index element={<TodosPage />} />
+              <Route
+                path={ALL_PATHS.notFound.path}
+                element={<NotFoundPage />}
+              />
+            </Route>
+            <Route
+              path="/test"
+              element={
+                <div>
+                  <p>Test</p>
+                </div>
+              }
+            />
+            <Route
+              path="*"
+              element={<Navigate to={ALL_PATHS.notFound.path} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </FilterProvider>
     </ThemeProvider>
   );
 }
