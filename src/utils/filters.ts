@@ -1,15 +1,17 @@
+type FilterObjectParams = {
+  name: string;
+  icon: JSX.Element;
+  values: string[];
+  currentValue: number;
+};
+
 export class FilterOption {
   name: string;
   icon: JSX.Element;
   values: string[];
   currentValue: number;
 
-  constructor(
-    name: string,
-    icon: JSX.Element,
-    values: string[],
-    currentValue: number,
-  ) {
+  constructor({ name, icon, values, currentValue }: FilterObjectParams) {
     this.name = name;
     this.icon = icon;
     this.values = values;
