@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { PriorityTag, Todo } from "./todo";
+import { TodoUserGenLists } from "./todo_user_gen_lists";
 
 export function generateRandomTodo(): Todo {
   return new Todo({
@@ -11,7 +12,10 @@ export function generateRandomTodo(): Todo {
       new PriorityTag("bg-yellow-700/80", "P2"),
       new PriorityTag("bg-cyan-600/80 dark:bg-teal-500/90", "P3"),
     ]),
-    userTags: faker.datatype.number({ min: 0, max: 10 }) >= 8 ? ["@user"] : [],
+    ownerList:
+      faker.datatype.number({ min: 0, max: 10 }) >= 8
+        ? faker.helpers.arrayElement(["School", "Work", "Personal"])
+        : undefined,
     note:
       faker.datatype.number({ min: 0, max: 10 }) >= 3
         ? faker.lorem.paragraph()

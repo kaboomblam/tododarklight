@@ -49,8 +49,8 @@ const TodoPage = (props: Props) => {
                         key={todo.todoItem.id}
                         className="list-inside list-disc"
                       >
-                        {todo.todoItem.title} - {todo.todoItem.userTags?.length}{" "}
-                        Tag(s)
+                        {todo.todoItem.title} -{" "}
+                        {todo.todoItem.ownerList?.length} Tag(s)
                       </li>
                     );
                   })}

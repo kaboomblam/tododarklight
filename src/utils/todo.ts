@@ -2,7 +2,7 @@ type TodoElement = {
   id: number;
   title: string;
   priority: PriorityTag;
-  userTags?: string[];
+  ownerList?: string;
   due?: Date;
   note?: string;
   completed: boolean;
