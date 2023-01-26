@@ -4,23 +4,18 @@ import FilterBar from "./FilterBar";
 import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
 import CollapsablePartialList from "./CollapsablePartialList";
 import { TodoContext } from "../providers/TodoContext";
+import { useTodoStore } from "../stores/TodoStore";
 
 type Props = {};
 
 const TodoList: React.FC<Props> = () => {
   const todoContent = useContext(TodoContext);
 
-  // let pinnedTodoItems = todos
-  //   .filter(FilterTodos.filterPinned)
-  //   .sort(SortTodos.sortAlphabeticallyAscending);
-  // let unpinnedTodoItems = todos
-  //   .filter(FilterTodos.filterUnpinned)
-  //   .sort(SortTodos.sortAlphabeticallyAscending);
+  const todoLists = useTodoStore((state) => state.todoLists);
 
   return (
     <div className="mx-auto max-w-lg flex flex-col gap-2">
-      <FilterBar />
-      {todoContent.lists.map((todos) => (
+      {todoLists.map((todos) => (
         <CollapsablePartialList
           key={todos.id}
           todos={todos.comprisedOf}
