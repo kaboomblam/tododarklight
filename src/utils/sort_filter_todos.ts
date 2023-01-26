@@ -55,6 +55,7 @@ export class FilterTodos {
   static filterDeleted = (todo: Todo) => todo.todoItem.deleted;
   static filterPinned = (todo: Todo) => todo.todoItem.pinned;
   static filterUnpinned = (todo: Todo) => !todo.todoItem.pinned;
+  static filterNoCategory = (todo: Todo) => !todo.todoItem.ownerList;
   static filterBasedOnListName(listName: string, todo: Todo) {
     return todo.todoItem.ownerList === listName;
   }

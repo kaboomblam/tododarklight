@@ -38,6 +38,7 @@ export const defaultTodoLists: TodoList[] = [
     name: "Todos",
     comprisedOf: placeholderRandomList
       .filter(FilterTodos.filterUnpinned)
+      .filter(FilterTodos.filterNoCategory)
       .sort(SortTodos.sortAlphabeticallyAscending),
   }),
 ];
