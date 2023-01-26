@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { ImCalendar, ImFlag, ImList } from "react-icons/im";
-import { TodoList } from "../utils/todo_list";
+import { TodoList, TodoListParams, defaultTodoLists } from "../utils/todo_list";
 import { Todo } from "../utils/todo";
 import { generateRandomTodo } from "../utils/generate_random_todos";
 import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
@@ -27,38 +27,9 @@ const TodoContext = createContext<ContextProps>({
 const TodoProvider: React.FC<Props> = (props: Props) => {
   const filters: FilterOption[] = filterList;
 
-  function changeFilterValue(filterName: string, filterValue: string): void {
-    const filterIndex = filters.findIndex(
-      (filter) => filter.name === filterName,
-    );
-    const filterValueIndex = filters[filterIndex].values.findIndex(
-      (value) => value === filterValue,
-    );
-    filters[filterIndex].currentValue = filterValueIndex;
-  }
-
-  const placeholderRandomList = Array.from({ length: 20 }).map(() =>
-    generateRandomTodo(),
-  );
-
   const [content, setContent] = useState<ContextProps>({
     filters,
-    lists: [
-      {
-        id: 1234,
-        name: "Pinned",
-        comprisedOf: placeholderRandomList
-          .filter(FilterTodos.filterPinned)
-          .sort(SortTodos.sortAlphabeticallyAscending),
-      },
-      {
-        id: 1235,
-        name: "Todos",
-        comprisedOf: placeholderRandomList
-          .filter(FilterTodos.filterUnpinned)
-          .sort(SortTodos.sortAlphabeticallyAscending),
-      },
-    ],
+    lists: defaultTodoLists,
   });
 
   useEffect(() => {

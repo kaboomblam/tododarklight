@@ -10,7 +10,7 @@ const TodoPage = (props: Props) => {
   });
 
   const { todos, filters } = useTodoStore((state) => {
-    return { todos: state.todos, filters: state.filters };
+    return { todos: state.todoLists, filters: state.filters };
   });
 
   return (
@@ -20,16 +20,28 @@ const TodoPage = (props: Props) => {
         Increase
       </button> */}
       <div className="p-1.5 bg-cyan-500 mb-1 rounded">
-        <p className="text-white text-center">Length: {filters.length}</p>
+        <p className="text-white text-center">Filters: {filters.length}</p>
         <ul>
           {filters.map((filter) => {
             return (
               <li key={filter.name} className="list-inside list-disc">
-                {filter.name.toUpperCase()}: {filter.currentValue}, Current:{" "}
+                {filter.name.toUpperCase()}, Current:{" "}
                 {filter.values[filter.currentValue]}, Values:{" "}
                 {filter.values.map((value) => {
                   return <span key={value}>{value}, </span>;
                 })}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="p-1.5 bg-cyan-500 mb-1 rounded">
+        <p className="text-white text-center">TodoLists: {todos.length}</p>
+        <ul>
+          {todos.map((todo) => {
+            return (
+              <li key={todo.id} className="list-inside list-disc">
+                {todo.name} - {todo.comprisedOf.length} Todos
               </li>
             );
           })}
