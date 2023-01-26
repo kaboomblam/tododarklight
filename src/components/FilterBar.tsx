@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../providers/TodoContext";
+import FilterSelectButton from "./FilterSelectButton";
 
 type Props = {};
 
@@ -16,7 +17,11 @@ const FilterBar = (props: Props) => {
             <p className="flex justify-end items-center text-indigo-600/70 dark:text-indigo-300/80 opacity-70">
               {filterOption.icon}
             </p>
-            <select
+            <FilterSelectButton
+              options={filterOption.values}
+              currentValue={filterOption.currentValue}
+            />
+            {/* <select
               className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-indigo-600/90 dark:text-inherit rounded-full outline-none"
               onChange={(elem) => console.log("We clicked", elem.target.value)}
               value={filterOption.values[filterOption.currentValue]}
@@ -32,7 +37,7 @@ const FilterBar = (props: Props) => {
                   </option>
                 );
               })}
-            </select>
+            </select> */}
           </div>
         );
       })}
