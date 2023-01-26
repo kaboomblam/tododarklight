@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../providers/TodoContext";
 import { FilterOption } from "../utils/filters";
+import { useTodoStore } from "../stores/TodoStore";
 
 type Props = {
   name: string;
@@ -9,16 +10,25 @@ type Props = {
 };
 
 const FilterSelectButton = (props: Props) => {
-  const todos = useContext(TodoContext);
+  // const todos = useContext(TodoContext);
+
+  const [filterOptions, updateFilterOption] = useTodoStore((state) => [
+    state.filterOptions,
+    state.updateFilterOption,
+  ]);
+
+  const changeListener = useTodoStore.subscribe(console.log);
 
   function changeFilterOption(name: string, value: string) {
-    let filterOptionChanged: FilterOption = todos.filters.filter(
+    let filterOptionChanged: FilterOption = filterOptions.filter(
       (filter) => filter.name === name,
     )[0];
 
     filterOptionChanged.currentValue = filterOptionChanged.values.findIndex(
       (filterValue) => filterValue === value,
     );
+
+    updateFilterOption(filterOptionChanged);
 
     console.log("Filter option changed", filterOptionChanged, "to", value);
   }

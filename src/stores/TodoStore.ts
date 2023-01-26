@@ -26,11 +26,22 @@ const useBearStore = create<BearState>()((set) => ({
 interface TodoState {
   todoLists: TodoList[];
   filterOptions: FilterOption[];
+  updateFilterOption: (newFilterOptions: FilterOption) => void;
 }
 
 const useTodoStore = create<TodoState>()((set) => ({
   todoLists: defaultWithUserLists,
   filterOptions: filterOptionsList,
+  // TODO: fix list jumping when updating filter
+  updateFilterOption: (newFilterOption: FilterOption) =>
+    set((state) => ({
+      filterOptions: [
+        ...state.filterOptions.filter(
+          (filter) => filter.name != newFilterOption.name,
+        ),
+        newFilterOption,
+      ],
+    })),
 }));
 
 export { useBearStore, useTodoStore };
