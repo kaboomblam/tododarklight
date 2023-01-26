@@ -1,7 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { PriorityTag, Todo } from "./todo";
-
-export const STARTING_TODOS: Todo[] = [];
+import { filterListUserAddedNames } from "./filter_list";
 
 export function generateRandomTodo(): Todo {
   return new Todo({
@@ -13,6 +12,10 @@ export function generateRandomTodo(): Todo {
       new PriorityTag("bg-yellow-700/80", "P2"),
       new PriorityTag("bg-cyan-600/80 dark:bg-teal-500/90", "P3"),
     ]),
+    ownerList:
+      faker.datatype.number({ min: 0, max: 10 }) >= 8
+        ? faker.helpers.arrayElement(filterListUserAddedNames)
+        : undefined,
     note:
       faker.datatype.number({ min: 0, max: 10 }) >= 3
         ? faker.lorem.paragraph()
@@ -27,7 +30,3 @@ export function generateRandomTodo(): Todo {
     pinned: faker.datatype.number({ min: 0, max: 10 }) >= 7,
   });
 }
-
-Array.from({ length: 40 }).forEach(() => {
-  STARTING_TODOS.push(generateRandomTodo());
-});

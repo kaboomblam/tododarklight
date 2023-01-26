@@ -1,15 +1,14 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import TodoList from "../components/TodoList";
-import { STARTING_TODOS } from "../utils/generate_random_todos";
+import FilterBar from "../components/FilterBar";
 
 type Props = {};
 
 const TodoPage = (props: Props) => {
-  const todos = STARTING_TODOS;
   return (
     <>
-      <TodoList todos={todos} />
+      <FilterBar />
+      <TodoList />
     </>
   );
 };

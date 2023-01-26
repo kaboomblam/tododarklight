@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../providers/TodoContext";
 import FilterSelectButton from "./FilterSelectButton";
+import { useTodoStore } from "../stores/TodoStore";
 
 type Props = {};
 
 const FilterBar = (props: Props) => {
-  const todos = useContext(TodoContext);
+  const filters = useTodoStore((state) => state.filterOptions);
+
   return (
     <div className="flex gap-3 bg-blue-300/50 rounded mb-1 p-2">
-      {todos.filters.map((filterOption) => {
+      {filters.map((filterOption) => {
         return (
           <div
             key={filterOption.name}
@@ -22,23 +24,6 @@ const FilterBar = (props: Props) => {
               options={filterOption.values}
               currentValue={filterOption.currentValue}
             />
-            {/* <select
-              className="py-1 px-1.5 font-bold bg-indigo-300 dark:bg-indigo-300/50 text-indigo-600/90 dark:text-inherit rounded-full outline-none"
-              onChange={(elem) => console.log("We clicked", elem.target.value)}
-              value={filterOption.values[filterOption.currentValue]}
-            >
-              {filterOption.values.map((option) => {
-                return (
-                  <option
-                    key={filterOption.name + option}
-                    value={option}
-                    className="bg-stone-200 text-black"
-                  >
-                    {option}
-                  </option>
-                );
-              })}
-            </select> */}
           </div>
         );
       })}
