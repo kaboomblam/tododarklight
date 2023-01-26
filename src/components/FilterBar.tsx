@@ -18,6 +18,7 @@ const FilterBar = (props: Props) => {
               {filterOption.icon}
             </p>
             <FilterSelectButton
+              name={filterOption.name}
               options={filterOption.values}
               currentValue={filterOption.currentValue}
             />

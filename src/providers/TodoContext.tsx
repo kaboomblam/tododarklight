@@ -45,6 +45,16 @@ const TodoProvider: React.FC<Props> = (props: Props) => {
     ),
   ];
 
+  function changeFilterValue(filterName: string, filterValue: string): void {
+    const filterIndex = filters.findIndex(
+      (filter) => filter.name === filterName,
+    );
+    const filterValueIndex = filters[filterIndex].values.findIndex(
+      (value) => value === filterValue,
+    );
+    filters[filterIndex].currentValue = filterValueIndex;
+  }
+
   const placeholderRandomList = Array.from({ length: 20 }).map(() =>
     generateRandomTodo(),
   );
