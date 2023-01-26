@@ -41,6 +41,7 @@ const TodoPage = (props: Props) => {
               <li key={todoList.id} className="list-inside list-disc">
                 {todoList.name} - {todoList.comprisedOf.length} Todos.
                 <hr />
+                {/* Todos */}
                 <ul className="indent-5">
                   {todoList.comprisedOf.map((todo) => {
                     return (
@@ -48,7 +49,8 @@ const TodoPage = (props: Props) => {
                         key={todo.todoItem.id}
                         className="list-inside list-disc"
                       >
-                        {todo.todoItem.title} - {todo.todoItem.note}
+                        {todo.todoItem.title} - {todo.todoItem.userTags?.length}{" "}
+                        Tag(s)
                       </li>
                     );
                   })}
