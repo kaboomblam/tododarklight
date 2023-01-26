@@ -9,16 +9,13 @@ const TodoPage = (props: Props) => {
     return { bears: state.bears, increasePopulation: state.increasePopulation };
   });
 
-  const { todos, filters } = useTodoStore((state) => {
+  const { todos: todoLists, filters } = useTodoStore((state) => {
     return { todos: state.todoLists, filters: state.filters };
   });
 
   return (
     <>
-      {/* <p>{bears}</p>
-      <button onClick={increasePopulation} className="bg-blue-500 p-1 rounded">
-        Increase
-      </button> */}
+      {/* Filters */}
       <div className="p-1.5 bg-cyan-500 mb-1 rounded">
         <p className="text-white text-center">Filters: {filters.length}</p>
         <ul>
@@ -35,13 +32,27 @@ const TodoPage = (props: Props) => {
           })}
         </ul>
       </div>
+      {/* TodoLists */}
       <div className="p-1.5 bg-cyan-500 mb-1 rounded">
-        <p className="text-white text-center">TodoLists: {todos.length}</p>
+        <p className="text-white text-center">TodoLists: {todoLists.length}</p>
         <ul>
-          {todos.map((todo) => {
+          {todoLists.map((todoList) => {
             return (
-              <li key={todo.id} className="list-inside list-disc">
-                {todo.name} - {todo.comprisedOf.length} Todos
+              <li key={todoList.id} className="list-inside list-disc">
+                {todoList.name} - {todoList.comprisedOf.length} Todos.
+                <hr />
+                <ul className="indent-5">
+                  {todoList.comprisedOf.map((todo) => {
+                    return (
+                      <li
+                        key={todo.todoItem.id}
+                        className="list-inside list-disc"
+                      >
+                        {todo.todoItem.title} - {todo.todoItem.note}
+                      </li>
+                    );
+                  })}
+                </ul>
               </li>
             );
           })}

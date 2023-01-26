@@ -11,6 +11,7 @@ export function generateRandomTodo(): Todo {
       new PriorityTag("bg-yellow-700/80", "P2"),
       new PriorityTag("bg-cyan-600/80 dark:bg-teal-500/90", "P3"),
     ]),
+    userTags: faker.datatype.number({ min: 0, max: 10 }) >= 8 ? ["@user"] : [],
     note:
       faker.datatype.number({ min: 0, max: 10 }) >= 3
         ? faker.lorem.paragraph()
