@@ -1,3 +1,4 @@
+import { filterListUserAddedNames } from "./filter_list";
 import { generateRandomTodo } from "./generate_random_todos";
 import { FilterTodos, SortTodos } from "./sort_filter_todos";
 import { Todo } from "./todo";
@@ -40,3 +41,15 @@ export const defaultTodoLists: TodoList[] = [
       .sort(SortTodos.sortAlphabeticallyAscending),
   }),
 ];
+
+let userAddedLists = filterListUserAddedNames.map((listName) => {
+  return new TodoList({
+    id: Math.random(),
+    name: listName,
+    comprisedOf: placeholderRandomList
+      .filter((todo) => FilterTodos.filterBasedOnListName(listName, todo))
+      .sort(SortTodos.sortAlphabeticallyAscending),
+  });
+});
+
+export const defaultWithUserLists = [...defaultTodoLists, ...userAddedLists];

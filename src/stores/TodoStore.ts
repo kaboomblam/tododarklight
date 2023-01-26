@@ -3,8 +3,12 @@ import { create } from "zustand";
 import { Todo } from "../utils/todo";
 import { FilterOption } from "../utils/filters";
 import { ImCalendar, ImFlag, ImList } from "react-icons/im";
-import { filterList } from "../utils/filter_list";
-import { TodoList, defaultTodoLists } from "../utils/todo_list";
+import { filterOptionsList } from "../utils/filter_list";
+import {
+  TodoList,
+  defaultTodoLists,
+  defaultWithUserLists,
+} from "../utils/todo_list";
 
 interface BearState {
   bears: number;
@@ -21,12 +25,12 @@ const useBearStore = create<BearState>()((set) => ({
 // my attempt at a TodoStore
 interface TodoState {
   todoLists: TodoList[];
-  filters: FilterOption[];
+  filterOptions: FilterOption[];
 }
 
 const useTodoStore = create<TodoState>()((set) => ({
-  todoLists: defaultTodoLists,
-  filters: filterList,
+  todoLists: defaultWithUserLists,
+  filterOptions: filterOptionsList,
 }));
 
 export { useBearStore, useTodoStore };

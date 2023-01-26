@@ -10,7 +10,7 @@ import {
   priorityFilters,
   sortFilters,
 } from "../utils/filters";
-import { filterList } from "../utils/filter_list";
+import { filterOptionsList } from "../utils/filter_list";
 
 type Props = { children: JSX.Element };
 
@@ -25,7 +25,7 @@ const TodoContext = createContext<ContextProps>({
 });
 
 const TodoProvider: React.FC<Props> = (props: Props) => {
-  const filters: FilterOption[] = filterList;
+  const filters: FilterOption[] = filterOptionsList;
 
   const [content, setContent] = useState<ContextProps>({
     filters,

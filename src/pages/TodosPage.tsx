@@ -10,7 +10,7 @@ const TodoPage = (props: Props) => {
   });
 
   const { todos: todoLists, filters } = useTodoStore((state) => {
-    return { todos: state.todoLists, filters: state.filters };
+    return { todos: state.todoLists, filters: state.filterOptions };
   });
 
   return (
@@ -39,7 +39,9 @@ const TodoPage = (props: Props) => {
           {todoLists.map((todoList) => {
             return (
               <li key={todoList.id} className="list-inside list-disc">
-                {todoList.name} - {todoList.comprisedOf.length} Todos.
+                <span className="font-bold">
+                  {todoList.name} - {todoList.comprisedOf.length} Todos.
+                </span>
                 <hr />
                 {/* Todos */}
                 <ul className="indent-5">
@@ -49,8 +51,13 @@ const TodoPage = (props: Props) => {
                         key={todo.todoItem.id}
                         className="list-inside list-disc"
                       >
-                        {todo.todoItem.title} -{" "}
-                        {todo.todoItem.ownerList?.length} Tag(s)
+                        {todo.todoItem.title}
+                        {/* Owners */}
+                        <ul className="indent-5">
+                          <li className="indent-10 list-inside list-disc">
+                            {todo.todoItem.ownerList ?? "No owner"}
+                          </li>
+                        </ul>
                       </li>
                     );
                   })}
