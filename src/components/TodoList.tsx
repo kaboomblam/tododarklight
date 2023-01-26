@@ -5,11 +5,9 @@ import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
 import CollapsablePartialList from "./CollapsablePartialList";
 import { TodoContext } from "../providers/TodoContext";
 
-type Props = {
-  todos: Todo[];
-};
+type Props = {};
 
-const TodoList: React.FC<Props> = ({ todos }) => {
+const TodoList: React.FC<Props> = () => {
   const todoContent = useContext(TodoContext);
 
   // let pinnedTodoItems = todos

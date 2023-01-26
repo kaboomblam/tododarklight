@@ -1,8 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { PriorityTag, Todo } from "./todo";
 
-export const STARTING_TODOS: Todo[] = [];
-
 export function generateRandomTodo(): Todo {
   return new Todo({
     id: faker.datatype.number(),
@@ -27,7 +25,3 @@ export function generateRandomTodo(): Todo {
     pinned: faker.datatype.number({ min: 0, max: 10 }) >= 7,
   });
 }
-
-Array.from({ length: 40 }).forEach(() => {
-  STARTING_TODOS.push(generateRandomTodo());
-});
