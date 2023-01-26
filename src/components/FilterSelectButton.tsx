@@ -16,7 +16,11 @@ const FilterSelectButton = (props: Props) => {
       (filter) => filter.name === name,
     )[0];
 
-    console.log("Filter option changed", filterOptionChanged);
+    filterOptionChanged.currentValue = filterOptionChanged.values.findIndex(
+      (filterValue) => filterValue === value,
+    );
+
+    console.log("Filter option changed", filterOptionChanged, "to", value);
   }
 
   return (
