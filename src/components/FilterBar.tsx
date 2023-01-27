@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { TodoContext } from "../providers/TodoContext";
 import FilterSelectButton from "./FilterSelectButton";
 import { useTodoStore } from "../stores/TodoStore";
 
@@ -9,7 +8,7 @@ const FilterBar = (props: Props) => {
   const filters = useTodoStore((state) => state.filterOptions);
 
   return (
-    <div className="flex gap-3 bg-blue-300/50 rounded mb-1 p-2">
+    <div className="mx-auto max-w-lg flex gap-3 bg-blue-300/50 rounded mb-1 p-2">
       {filters.map((filterOption) => {
         return (
           <div

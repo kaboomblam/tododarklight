@@ -3,14 +3,11 @@ import { Todo } from "../utils/todo";
 import FilterBar from "./FilterBar";
 import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
 import CollapsablePartialList from "./CollapsablePartialList";
-import { TodoContext } from "../providers/TodoContext";
 import { useTodoStore } from "../stores/TodoStore";
 
 type Props = {};
 
 const TodoList: React.FC<Props> = () => {
-  const todoContent = useContext(TodoContext);
-
   const todoLists = useTodoStore((state) => state.todoLists);
 
   return (
