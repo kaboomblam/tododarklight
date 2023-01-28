@@ -32,7 +32,6 @@ interface TodoState {
 const useTodoStore = create<TodoState>()((set, get) => ({
   todoLists: defaultWithUserLists,
   filterOptions: filterOptionsList,
-  // TODO: fix list jumping when updating filter
   updateFilterOption: function (newFilterOption: FilterOption) {
     const filterToUpdate = get().filterOptions;
     const index = filterToUpdate.findIndex(
@@ -43,18 +42,6 @@ const useTodoStore = create<TodoState>()((set, get) => ({
       ...state,
       filterOptions: [...filterToUpdate],
     }));
-    // let filterToUpdate = filterOptionsList.filter(
-    //   (filter) => filter.name == newFilterOption.name,
-    // )[0];
-    // filterToUpdate = newFilterOption;
-    // return set((state) => ({
-    //   filterOptions: [
-    //     ...state.filterOptions.filter(
-    //       (filter) => filter.name != newFilterOption.name,
-    //     ),
-    //     newFilterOption,
-    //   ],
-    // }));
   },
 }));
 
