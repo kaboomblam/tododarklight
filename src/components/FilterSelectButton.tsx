@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { TodoContext } from "../providers/TodoContext";
 import { FilterOption } from "../utils/filters";
 import { useTodoStore } from "../stores/TodoStore";
 
@@ -17,8 +16,6 @@ const FilterSelectButton = (props: Props) => {
     state.updateFilterOption,
   ]);
 
-  const changeListener = useTodoStore.subscribe(console.log);
-
   function changeFilterOption(name: string, value: string) {
     let filterOptionChanged: FilterOption = filterOptions.filter(
       (filter) => filter.name === name,
@@ -29,8 +26,6 @@ const FilterSelectButton = (props: Props) => {
     );
 
     updateFilterOption(filterOptionChanged);
-
-    console.log("Filter option changed", filterOptionChanged, "to", value);
   }
 
   return (
