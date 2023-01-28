@@ -33,15 +33,20 @@ const useTodoStore = create<TodoState>()((set) => ({
   todoLists: defaultWithUserLists,
   filterOptions: filterOptionsList,
   // TODO: fix list jumping when updating filter
-  updateFilterOption: (newFilterOption: FilterOption) =>
-    set((state) => ({
+  updateFilterOption: function (newFilterOption: FilterOption) {
+    let filterToUpdate = filterOptionsList.filter(
+      (filter) => filter.name == newFilterOption.name,
+    )[0];
+    filterToUpdate = newFilterOption;
+    return set((state) => ({
       filterOptions: [
         ...state.filterOptions.filter(
           (filter) => filter.name != newFilterOption.name,
         ),
         newFilterOption,
       ],
-    })),
+    }));
+  },
 }));
 
 export { useBearStore, useTodoStore };
