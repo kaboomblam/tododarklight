@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import FilterSelectButton from "./FilterSelectButton";
-import { useTodoStore } from "../stores/TodoStore";
+import FilterSelectButton from "../filter_components/FilterSelectButton";
+import { useTodoStore } from "../../stores/todo_store";
 
 type Props = {};
 

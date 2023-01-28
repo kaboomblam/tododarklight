@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ALL_PATHS } from "../utils/route_paths";
+import { ALL_PATHS } from "../constants";
 
 type Props = {};
 

@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
-import { PriorityTag, Todo } from "./todo";
-import { filterListUserAddedNames } from "./filter_list";
+import { Todo } from "../todo";
+import { PriorityTag } from "../todo_priority_tag";
+import { TODO_LISTS_USER_ADDED_NAMES } from "./todo_user_made_lists_demo";
 
 export function generateRandomTodo(): Todo {
   return new Todo({
@@ -14,7 +15,7 @@ export function generateRandomTodo(): Todo {
     ]),
     ownerList:
       faker.datatype.number({ min: 0, max: 10 }) >= 8
-        ? faker.helpers.arrayElement(filterListUserAddedNames)
+        ? faker.helpers.arrayElement(TODO_LISTS_USER_ADDED_NAMES)
         : undefined,
     note:
       faker.datatype.number({ min: 0, max: 10 }) >= 3

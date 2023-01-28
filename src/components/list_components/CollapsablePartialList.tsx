@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ListHeadingTile from "./ListHeadingTile";
 import CollapseListButton from "./CollapseListButton";
-import { Todo } from "../utils/todo";
-import TodoListCardItem from "./TodoListCardItem";
+import { Todo } from "../../utils/todo";
+import TodoListCardItem from "../TodoCardItem";
 
 type Props = {
   todos: Todo[];

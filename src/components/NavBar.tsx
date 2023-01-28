@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../providers/ThemeContext";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { ALL_PATHS, NAV_BAR_PATHS } from "../utils/route_paths";
 import { useLocation } from "react-router-dom";
+import { NAV_BAR_PATHS } from "../constants";
 
 const NavBar = () => {
   const theme = useContext(ThemeContext);

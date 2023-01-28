@@ -1,6 +1,6 @@
 import React from "react";
-import TodoList from "../components/TodoList";
-import FilterBar from "../components/FilterBar";
+import TodoList from "../components/list_components/TodoList";
+import FilterBar from "../components/filter_components/FilterBar";
 
 type Props = {};
 

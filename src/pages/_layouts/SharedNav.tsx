@@ -1,10 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import NavBar from "../../components/NavBar";
 
 type Props = {};
 
-const SharedNavPage = (props: Props) => {
+const SharedNav = (props: Props) => {
   return (
     <>
       <NavBar />
@@ -15,4 +15,4 @@ const SharedNavPage = (props: Props) => {
   );
 };
 
-export default SharedNavPage;
+export default SharedNav;

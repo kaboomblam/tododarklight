@@ -1,14 +1,11 @@
 import React from "react";
 import { create } from "zustand";
 import { Todo } from "../utils/todo";
-import { FilterOption } from "../utils/filters";
+import { FilterOption } from "../utils/filter_option";
 import { ImCalendar, ImFlag, ImList } from "react-icons/im";
-import { filterOptionsList } from "../utils/filter_list";
-import {
-  TodoList,
-  defaultTodoLists,
-  defaultWithUserLists,
-} from "../utils/todo_list";
+import { filterOptionsList } from "../components/_helpers/filter_options_list";
+import { TodoList } from "../utils/todo_list";
+import { defaultWithUserMadeLists } from "../utils/_helpers/default_todo_lists";
 
 interface BearState {
   bears: number;
@@ -30,7 +27,7 @@ interface TodoState {
 }
 
 const useTodoStore = create<TodoState>()((set, get) => ({
-  todoLists: defaultWithUserLists,
+  todoLists: defaultWithUserMadeLists,
   filterOptions: filterOptionsList,
   updateFilterOption: function (newFilterOption: FilterOption) {
     const filterToUpdate = get().filterOptions;

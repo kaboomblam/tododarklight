@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Todo } from "../utils/todo";
-import FilterBar from "./FilterBar";
-import { FilterTodos, SortTodos } from "../utils/sort_filter_todos";
+import { Todo } from "../../utils/todo";
+import FilterBar from "../filter_components/FilterBar";
+import { FilterTodos, SortTodos } from "../../utils/_helpers/sort_filter_todos";
 import CollapsablePartialList from "./CollapsablePartialList";
-import { useTodoStore } from "../stores/TodoStore";
+import { useTodoStore } from "../../stores/todo_store";
 
 type Props = {};
 

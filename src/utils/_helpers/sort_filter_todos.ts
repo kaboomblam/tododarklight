@@ -1,4 +1,4 @@
-import { Todo } from "./todo";
+import { Todo } from "../todo";
 
 export class SortTodos {
   static sortAlphabeticallyAscending = function (a: Todo, b: Todo) {

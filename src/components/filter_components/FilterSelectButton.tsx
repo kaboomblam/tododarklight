@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { FilterOption } from "../utils/filters";
-import { useTodoStore } from "../stores/TodoStore";
+import { FilterOption } from "../../utils/filter_option";
+import { useTodoStore } from "../../stores/todo_store";
 
 type Props = {
   name: string;
